@@ -30,7 +30,7 @@ export default class Home extends React.Component {
 
                         <div className="row">
                             <CardDefault title="" 
-                                imageSrc="seg.png" 
+                                imageSrc="logo.png" 
                                 description="Kingsdom's day é o dia voltado aos grandes reinos da computação. Teremos palestras e mesa redonda para ajudar a nortear na escolha do caminho a se seguir durante e depois do curso."
                                 pageLink="/evento/segunda"
                             />
