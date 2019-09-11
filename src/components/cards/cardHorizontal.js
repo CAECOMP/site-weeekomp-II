@@ -9,7 +9,6 @@ export default class CardHorizontal extends React.Component {
             col: props.col,
             imageSrc: props.imageSrc,
             content: props.content,
-            title: props.title,
             buttonLink: props.buttonLink,
             buttonName: props.buttonName,
             size: props.size,

@@ -31,7 +31,7 @@ export default class Home extends React.Component {
                         <div className="row">
                             <CardDefault title="" 
                                 imageSrc="seg.png" 
-                                description="Kingsdom's day é o dia voltado aos grandes reinos da computação. Teremos palestras e mesa redonda para ajudar a nortear na escolha do caminho a se seguir durante e depois do curso."
+                                description="Kingsdom's day é o dia voltado aos grandes reinos da computação. Teremos palestras e mesa redonda para ajudar a nortear a escolha do caminho a se seguir durante e depois do curso."
                                 pageLink="/evento/segunda"
                             />
                             <CardDefault title="" 
@@ -41,7 +41,7 @@ export default class Home extends React.Component {
                             />
                             <CardDefault title="" 
                                 imageSrc="quar.png" 
-                                description="GameArt’s Day é o dia para aqueles que gostam da carreira de desenvolvimento de jogos e ilustração. Teremos práticas voltadas a essa área e de noite teremos o Valhala Of Design!"
+                                description="GameArt’s Day é o dia para aqueles que gostam da carreira de desenvolvimento de jogos e ilustração. Teremos práticas voltadas a essa área e de noite teremos o Walhalla Of Design!"
                                 pageLink="/evento/quarta"
                             />
                         </div>
