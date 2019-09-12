@@ -8,19 +8,20 @@ export default class CreateAccount extends React.Component{
 
     render(){
 
+        
         function handleSubmit(data) {
-            console.log("data.email");
-          }
+            console.log(data);
+        }
 
         return (
 
-            <div className="containerCreateAccount" onSubmit={()=>handleSubmit()}>
+            <div className="containerCreateAccount">
                 <img className="logoCreateAccount" src="logo.png" alt=""/>
-                <Form className="formCreateAccount">
-                    <Input className="formInput" name="namePerson" type="text" placeholder="Nome completo"/>
+                <Form className="formCreateAccount" onSubmit={handleSubmit}>
+                    <Input className="formInput" name="name_person" type="text" placeholder="Nome completo"/>
                     <Input className="formInput" name="email" type="email" placeholder="Seu email"/>
                     <Input className="formInput" name="password" type="password" placeholder="Senha"/>
-                    <Input className="formInput" name="confirmPassword" type="password" placeholder="Confirme senha"/>
+                    <Input className="formInput" name="confirm_password" type="password" placeholder="Confirme senha"/>
 
                     <button className="submitBtn" type="submit">Cadastrar</button>
                 </Form>
