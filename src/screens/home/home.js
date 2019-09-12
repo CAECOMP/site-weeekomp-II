@@ -4,7 +4,7 @@ import Navbar from '../../components/commons/navbar'
 import Banner from '../../components/banner'
 import Title from '../../components/title';
 import Divider from '../../components/divider';
-import Carousel from '../../components/carousel';
+// import Carousel from '../../components/carousel';
 import Footer from '../../components/commons/footer';
 import CardDefault from '../../components/cards/cardDefault';
 
@@ -21,7 +21,7 @@ export default class Home extends React.Component {
         return (
             <div>
                 <Navbar/>
-                <Banner imageSrc="banner.png"/>
+                <Banner imageSrc={require('../../talks/banner.png')}/>
 
                 <div className="container">
                     <div className="section">
@@ -62,9 +62,9 @@ export default class Home extends React.Component {
                     </div> 
                 </div>
 
-                <Divider/>
+                {/* <Divider/>
                 <Title>Loja</Title>
-                <Carousel itens={carouselItens}/>
+                <Carousel itens={carouselItens}/> */}
 
                 <Divider/>
                 <Footer/>

@@ -53,7 +53,6 @@ export default class Friday extends React.Component {
                         </div>
                     </div>
                 </div>
-
                 <Divider />
                 <Footer />
             </div>
