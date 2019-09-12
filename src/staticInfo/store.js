@@ -39,13 +39,13 @@ const info = {
     ],
 
     informative: [
-        {
-            title: "Entrega",
-            description: "Vem pegar no CACOMP no dia ou sei lá :V."
-        },
+        // {
+        //     title: "Entrega",
+        //     description: "Vem pegar no CACOMP no dia ou sei lá :V."
+        // },
         {
             title: "Pagamento",
-            description: "Manda moneys"
+            description: ['Os pagamentos deverão ser feitos por transferência bancária, pick-pay','PicPay: @jardelalves_bf','Nuconta:','->  Nome: Italo Bruno Cunha da Silva','->  CPF: 054.888.993-75','->  Banco: 260 - Nu Pagamentos S.A.','->  Agência: 0001','->  Conta: 8270524-0','Pagamento em espécie: Confira horários de atendimento do CAECOMP no rodapé do site']
         }
     ]
 }
