@@ -100,30 +100,15 @@ export default class Profile extends React.Component {
                     <h4 className="center-align">Pedidos</h4>
                     <div className="container">
                         <div className="row">
-                            <div className="col l4 m2 s12">
-                                <CardHorizontal
-                                    title="Caneca"
-                                    content="Caneca cósmica. R$ 50,00"
-                                    imageSrc="https://placegoat.com/600"
-                                    buttonLink="#" buttonName="Remover"
-                                />
-                            </div>
-                            <div className="col l4 m2 s12">
-                                <CardHorizontal
-                                    title="Caneca"
-                                    content="Caneca cósmica. R$ 50,00"
-                                    imageSrc="https://placegoat.com/600"
-                                    buttonLink="#" buttonName="Remover"
-                                />
-                            </div>
-                            <div className="col l4 m2 s12">
-                                <CardHorizontal
-                                    title="Caneca"
-                                    content="Caneca cósmica. R$ 50,00"
-                                    imageSrc="https://placegoat.com/600"
-                                    buttonLink="#" buttonName="Remover"
-                                />
-                            </div>
+                            {this.state.orders.map(o => (
+                                <div className="col l4 m2 s12">
+                                    <CardHorizontal
+                                        title={o.product_id}
+                                        content={`R$ ${o.value}`}
+                                        imageSrc="https://placegoat.com/600"
+                                    />
+                                </div>
+                            ))}
                         </div>
                     </div>
                     </div>
