@@ -6,6 +6,7 @@ import Title from "../../components/title";
 import CardDefault from "../../components/cards/cardDefault";
 import CardHorizontal from "../../components/cards/cardHorizontal";
 import Footer from "../../components/commons/footer";
+import { write } from "fs";
 
 
 export default class Store extends React.Component {
@@ -20,7 +21,7 @@ export default class Store extends React.Component {
                     <blockquote>{`R$ ${p.price.toFixed(2)}`}</blockquote>
                     <p>{p.description}</p>
                 </div>
-
+        
         return <CardDefault colSize="s12 m6" imageSrc={imgSrc} title={title} description={description}/>
     }
 
@@ -35,13 +36,14 @@ export default class Store extends React.Component {
                     </div>
 
             return <CardHorizontal 
-                    imageSrc={imgSrc} 
-                    title={title} 
-                    content={content} 
-                    col={col} 
-                    size="small"
-                    buttonName="Yo quiero!"
-                    buttonLink="http://google.com" />
+                        imageSrc={imgSrc} 
+                        title={title} 
+                        content={content} 
+                        col={col} 
+                        size="small"
+                        buttonName="Comprar"
+                        buttonLink="#"
+                    />
         })
     }
 
@@ -49,7 +51,6 @@ export default class Store extends React.Component {
         return (
             <div>
                 <Navbar/>
-
                 <div className="container">
                     <Title>Loja</Title>
 
