@@ -19,7 +19,7 @@ export default class CardSmall extends React.Component {
             <div className={this.state.class}>
                 <div className="card black">
                     <div className="card-image waves-effect waves-block waves-light">
-                        <img className="activator" src={this.state.imageSrc}/>
+                        <img className="activator" src={this.state.imageSrc} alt=""/>
                     </div>
                     <div className="card-content">
                         <span className="card-title activator">{this.state.title}<i className="material-icons right">more_vert</i></span>

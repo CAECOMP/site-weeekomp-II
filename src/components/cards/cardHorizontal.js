@@ -29,7 +29,7 @@ export default class CardHorizontal extends React.Component {
             <div className={this.state.col != null ? "col " + this.state.col : ""}>
                 <div className={`card ${this.state.size != null ? this.state.size : ""} horizontal grey darken-4`}>
                     <div className="card-image valign-wrapper">
-                        <img style={imgStyle} src={this.state.imageSrc}/>
+                        <img style={imgStyle} src={this.state.imageSrc} alt=''/>
                     </div>
                     <div className="card-stacked">
                         <div className="card-content">

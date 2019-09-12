@@ -32,7 +32,7 @@ export default class CardDefault extends React.Component {
 
         const imgTitle = 
                 <div>
-                    <img src={this.state.imageSrc}/>
+                    <img src={this.state.imageSrc} alt=""/>
                     {title}
                 </div>
 
