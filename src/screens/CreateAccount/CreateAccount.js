@@ -50,7 +50,7 @@ export default class CreateAccount extends React.Component{
         return (
             <div className="containerCreateAccount" style={{backgroundColor: '#461000'}}>
                 <img className="logoCreateAccount" src="logo.png" alt=""/>
-                //<p>{this.state.errorMessage}</p>
+                {/* <p>{this.state.errorMessage}</p> */}
                 <Form className="formCreateAccount" schema={schema} onSubmit={handleSubmit}>
                     <Input className="formInput" name="name_person" type="text" placeholder="Nome completo"/>
                     <Input className="formInput" name="email" type="email" placeholder="Seu email"/>
