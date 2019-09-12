@@ -14,21 +14,21 @@ export default class Monday extends React.Component {
             <div>
                 <Navbar />
                 <Title>Kingdom's Day</Title>
-                <h5 className="center">13.10.19 - Segunda</h5>
+                <h5 className="center"> 07/10/19 - Segunda </h5>
 
                 <div className="container">
                     <div className="section">
                         <div className="row">
                             <CardBig
-                                title="Lucas Tavares, André Vieira, Gabriela Bezerra e Luiza Macedo - The Last Ones"
+                                title="The Last Ones - Lucas Tavares, André Vieira, Gabriela Bezerra e Luiza Macedo"
                                 content="Alunos perto de se formar irão contar suas experiências durante o curso e suas expectativas para o dia depois da conquista do diploma."
-                                imageSrc="https://placegoat.com/600"
+                                imageSrc={require('../../talks/the-last-of-ones.png')}
                                 buttonLink="#" buttonName="Inscrever-se"
                             />
                             <CardBig
-                                title="David, Alan Rabelo, Leo Silveira, Levi Moreira - Távola redonda dos reinos"
-                                content="Roda de conversa com ex-alunos que seguiram caminhos diferentes após a graduação. Falaremos com alunos de Mestrado, ex-alunos que abriram empresas ou foram para o mercado de trabalho para tirar dúvidas e inspirar na hora de escolher o melhor caminho após a graduação."
-                                imageSrc="https://placegoat.com/600"
+                                title="Odin's Table - David, Alan Rabelo, Leo Silveira, Levi Moreira"
+                                content="Roda de conversa com ex-alunos que seguiram caminhos diferentes após a graduação. Falaremos com alunos de Mestrado, ex-alunos que abriram empresas ou foram para o mercado de trabalho. Eles irão tirar dúvidas e inspirar na hora de escolher o melhor caminho após a graduação."
+                                imageSrc={require('../../talks/odins-table.png')}
                                 buttonLink="#" buttonName="Inscrever-se"
                             />
                         </div>

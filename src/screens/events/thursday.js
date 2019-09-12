@@ -14,7 +14,7 @@ export default class Thursday extends React.Component {
             <div>
                 <Navbar />
                 <Title>Locky's Day</Title>
-                <h5 className="center">13.10.19 - Quinta</h5>
+                <h5 className="center">10/10/19 - Quinta</h5>
 
                 <div className="container">
                     <div className="section">
@@ -22,13 +22,13 @@ export default class Thursday extends React.Component {
                             <CardSmall
                                 title="Workshop 'Crack Me'"
                                 content="O workshop será ministrado de forma que os participantes conheçam os conceitos básicos necessários para solucionar desafios do tipo “crack me”. Não será necessário de conhecimentos prévios de resolução de tais desafios mas é aconselhável ter uma boa base de programação utilizando a linguagem C para melhor entendimento dos problemas a serem resolvidos."
-                                imageSrc="https://placegoat.com/600"
+                                imageSrc={require('../../persons/marcus-vinicius.jpg')}
                                 buttonLink="#" buttonName="Inscrever-se"
                             />
                             <CardSmall
                                 title="CTF - Capture The Flag"
                                 content="O CTF da Weekomp desse ano abordará desafios do tipo “crack me” e tem como objetivo apresentar os problemas clássicos relacionados a essa categoria de problemas."
-                                imageSrc="https://placegoat.com/600"
+                                imageSrc={require('../../talks/capture-flag.png')}
                                 buttonLink="#" buttonName="Inscrever-se"
                             />
                         </div>

@@ -11,7 +11,7 @@ export default class CardDefault extends React.Component {
             pageLink: props.pageLink,
             class: `col ${props.colSize != null ? props.colSize : "s12 m4"} ${props.class}`,
             size: props.size,
-            centerTitle: props.centerTitle == undefined ? false : true
+            centerTitle: props.centerTitle === undefined ? false : true
         }
     }
 
