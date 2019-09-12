@@ -12,6 +12,7 @@ import Wednesday from './screens/events/wednesday';
 import Thursday from './screens/events/thursday';
 import Friday from './screens/events/friday';
 import CreateAccount from './screens/CreateAccount/CreateAccount';
+import Login from './screens/Login/Login'
 
 import './index.css';
 import 'materialize-css/dist/css/materialize.min.css';
@@ -29,7 +30,8 @@ const routing = (
             <Route path="/evento/quinta" component={Thursday}/>
             <Route path="/evento/sexta" component={Friday}/>
             <Route path="/perfil/" component={Profile}/>
-            <Route path="/createAccount/" component={CreateAccount}/>
+            <Route path="/cadastro/" component={CreateAccount}/>
+            <Route path="/login/" component={Login}/>
         </div>
     </Router>
 )

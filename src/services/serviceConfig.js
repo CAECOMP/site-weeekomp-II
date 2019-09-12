@@ -1,3 +1,4 @@
 export const ServiceConfig = {
-  baseUrl: 'https://weekomp-homolog.herokuapp.com/v1'
+  baseUrl: 'https://cors-anywhere.herokuapp.com/https://weekomp-homolog.herokuapp.com/v1',
+  
 }
