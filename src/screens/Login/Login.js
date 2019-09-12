@@ -9,6 +9,11 @@ import '../CreateAccount/CreateAccount.css'
 export default class Login extends React.Component{
 
 
+    componentDidMount(){
+        const userToken = localStorage.getItem('userToken')
+        console.log(userToken)
+    }
+
     render(){
 
         const schema = Yup.object().shape({

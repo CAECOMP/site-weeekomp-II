@@ -19,6 +19,7 @@ export default class CreateAccount extends React.Component{
         });
         
         async function handleSubmit(data) {
+            localStorage.setItem('userToken', data.email)
             const authService = new AuthService()
             const response = await authService.registerUser(data.name, data.email, data.password)
 
