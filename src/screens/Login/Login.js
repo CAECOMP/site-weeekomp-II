@@ -1,17 +1,11 @@
 import React from 'react'
 import { Form, Input } from '@rocketseat/unform';
 import * as Yup from 'yup';
-import AuthService from '../../services/authService'
+import api from '../../services/api'
 import '../CreateAccount/CreateAccount.css'
 
 
 export default class Login extends React.Component{
-
-
-    componentDidMount(){
-        const userToken = localStorage.getItem('userToken')
-        console.log(userToken)
-    }
 
     render(){
 
@@ -21,10 +15,16 @@ export default class Login extends React.Component{
         });
         
         async function handleSubmit(data) {
-            const authService = new AuthService()
-            const response = await authService.login(data.email, data.password)
-
-            console.log(response)
+            api.post('/auth/signin',
+            {email: data.email, password: data.password})
+            .then((response)=>{
+                const result = response.data.data
+                console.log(result)
+                localStorage.setItem('userToken', result.token)
+            })
+            .catch((error)=>{
+                console.log(error.response.data)
+            })
         }
 
         return (
