@@ -21,7 +21,7 @@ export default class Navbar extends React.Component {
                     <nav>
                         <div className="nav-wrapper" style={{backgroundColor: '#461000'}}>
                             <div className="container">
-                                <a href="../" class="brand-logo left"><img className="responsive-img hide-on-med-and-down" src="../logo.png" style={styleAttributes}/></a>
+                                <a href="../" class="brand-logo left"><img className="responsive-img hide-on-med-and-down" src="../logo.png" style={styleAttributes} alt=""/></a>
                                 <a href="#" data-target="mobile-demo" className="sidenav-trigger"><i className="material-icons">menu</i></a>
                                 <ul id="nav-mobile" className="right hide-on-med-and-down">
                                     <li><a href="/loja/">Loja</a></li>
