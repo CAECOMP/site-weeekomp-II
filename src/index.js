@@ -5,6 +5,7 @@ import {Route, BrowserRouter as Router} from 'react-router-dom'
 
 import Home from './screens/home/home'
 import Store from './screens/store/store'
+import Rules from './screens/rules/rules'
 import Profile from './screens/profile/profile';
 import Monday from './screens/events/monday';
 import Tuesday from './screens/events/tuesday';
@@ -22,6 +23,7 @@ const routing = (
         <div>
             <Route exact path="/" component={Home}/>
             <Route path="/loja/" component={Store}/>
+            <Route path="/regras/" component={Rules}/>
             <Route path="/evento/segunda" component={Monday}/>
             <Route path="/evento/terca" component={Tuesday}/>
             <Route path="/evento/quarta" component={Wednesday}/>
