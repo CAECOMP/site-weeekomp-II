@@ -17,8 +17,7 @@ export default class CardDefault extends React.Component {
 
     renderDescription() {
         if (typeof(this.state.description) == "object") {
-            let list = this.state.description
-            return list.map((info) => {return(
+            return this.state.description.map((info) => {return(
                <ul><li>{info}</li></ul>
             )
             })
