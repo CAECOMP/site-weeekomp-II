@@ -34,7 +34,7 @@ export default class Login extends React.Component{
                     <Input className="formInput" name="email" type="email" placeholder="Seu email"/>
                     <Input className="formInput" name="password" type="password" placeholder="Senha"/>
                     
-                    <button className="submitBtn" style={{textDecorationColor: '#fff'}} type="submit">Entrar</button>
+                    <button className="submitBtn" type="submit">Entrar</button>
                 </Form>
             </div>
             
