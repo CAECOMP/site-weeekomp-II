@@ -5,6 +5,8 @@ import Footer from '../../components/commons/footer';
 import Navbar from '../../components/commons/navbar';
 import CardHorizontal from '../../components/cards/cardHorizontal';
 import api from '../../services/api'
+import info from '../../staticInfo/store'
+import { longStackSupport } from 'q';
 
 export default class Profile extends React.Component {
 
@@ -17,7 +19,7 @@ export default class Profile extends React.Component {
     constructor(props) {
         super(props)
         this.getUserInfo()
-      }
+    }
 
     async getUserInfo() {
         const userID = localStorage.getItem('userID')
@@ -40,6 +42,13 @@ export default class Profile extends React.Component {
             if (ordersResponse.data.error == false) 
                 this.setState({ orders: ordersResponse.data.data })
         }
+    }
+
+    logout() {
+        localStorage.removeItem('userToken')
+        localStorage.removeItem('userID')
+        localStorage.removeItem('userName')
+        this.setState({ userInfo: null, orders: [], registrations: [] })
     }
 
     render() {
@@ -71,6 +80,11 @@ export default class Profile extends React.Component {
                 :
                 <div>
                     <Title> {this.state.userInfo.name} </Title>
+                    <div className="center-align">
+                        <button class="btn-small waves-effect waves-light" style={{backgroundColor: '#461000', color: 'white'}} onClick={this.logout()}>
+                            Logout
+                        </button>
+                    </div>
                     <div className="section"> <Divider /> <h4 className="center-align">Inscrições</h4>
                     <div className="container">
                         <table className=" highlight responsive-table">
@@ -103,9 +117,11 @@ export default class Profile extends React.Component {
                             {this.state.orders.map(o => (
                                 <div className="col l4 m2 s12">
                                     <CardHorizontal
-                                        title={o.product_id}
+                                        title={(o.product_id > 0 && o.product_id < 6) ? 'Camisa Weekomp' : 
+                                            info.products.filter(p => p.id === o.product_id)[0].name}
                                         content={`R$ ${o.value}`}
-                                        imageSrc="https://placegoat.com/600"
+                                        imageSrc={(o.product_id > 0 && o.product_id < 6) ? '/static/media/shirt.98afe474.png' : 
+                                            info.products.filter(p => p.id === o.product_id)[0].imgSrc}
                                     />
                                 </div>
                             ))}

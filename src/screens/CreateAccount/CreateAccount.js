@@ -9,6 +9,13 @@ export default class CreateAccount extends React.Component{
 
     state = {errorMessage: ''}
 
+    constructor(props) {
+        super(props)
+        const userID = localStorage.getItem('userID')
+        const authToken = localStorage.getItem('userToken')
+        if (userID && authToken) window.open('/perfil', '_self')
+    }
+
     // function handleErrorMessage(message) {
     //     switch(message){
     //         case 'User already exists':
@@ -35,14 +42,11 @@ export default class CreateAccount extends React.Component{
             api.post('/auth/signup', 
             {name: data.name_person, email: data.email, password: data.password})
             .then((response)=>{
-                //handleErrorMessage('')
-                console.log(response.data)
                 const result = response.data.data
-                console.log(result)
                 localStorage.setItem('userToken', result.token)
                 localStorage.setItem('userID', result.userinfo.user_id)
                 localStorage.setItem('userName', result.userinfo.name)
-                window.open('/perfil')
+                window.open('/perfil', '_self')
             })
             .catch((error)=>{
                 console.log(error.response.data.data)
