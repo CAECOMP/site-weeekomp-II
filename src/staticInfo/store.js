@@ -23,26 +23,31 @@ const info = {
             description: "Bottons da Weekomp.",
             imgSrc: "/static/media/combo-2-models.a847e8b6.png"
         },{
+            id: 13,
             name: "Caderno Weekomp - Preto",
             price: 10,
             description: "Caderno da Weekomp.",
             imgSrc: "/static/media/black.e79260b2.png"
         },{
+            id: 12,
             name: "Caderno Weekomp - Verde",
             price: 10,
             description: "Caderno da Weekomp.",
             imgSrc: "/static/media/emerald.0832b59d.png"
         },{
+            id: 10,
             name: "Caderno Weekomp - Roxo",
             price: 10,
             description: "Caderno da Weekomp.",
             imgSrc: "/static/media/purple.e43e1436.png"
         },{
+            id: 11,
             name: "Caderno Weekomp - Azul",
             price: 10,
             description: "Caderno da Weekomp.",
             imgSrc: "/static/media/sapphire.b2cf0859.png"
         },{
+            id: 9,
             name: "Caderno Weekomp - Vermelho",
             price: 10,
             description: "Caderno da Weekomp.",
@@ -53,16 +58,19 @@ const info = {
             description: "Camiseta da Weekomp.",
             imgSrc: "/static/media/shirt.98afe474.png"
         },{
+            id: 7,
             name: "Botton Weekomp - Modelo 01",
             price: 3,
             description: "Botton da Weekomp.",
             imgSrc: "/static/media/botton-model-01.cc4daddc.png"
         },{
+            id: 6,
             name: "Botton Weekomp - Modelo 02",
             price: 3,
             description: "Botton da Weekomp.",
             imgSrc: "/static/media/botton-model-02.830326ac.png"
         },{
+            id: 8,
             name: "Botton Weekomp - Modelo 03",
             price: 3,
             description: "Botton da Weekomp.",
