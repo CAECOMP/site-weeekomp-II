@@ -28,9 +28,9 @@ export default class Wednesday extends React.Component {
                                 class="offset-m3"
                             />
                             <CardSmall
-                                title="Palestra Mato"
-                                content="Teste. I am a very simple card. I am good at containing small bits of information."
-                                imageSrc="https://placegoat.com/600"
+                                title="Gustavo Chaves - UI e UX: Teoria e Prática com Adobe XD"
+                                content="Nesta oficina será ensinado sobre os entregáveis de UX e como usá-los para construir interfaces de apps."
+                                imageSrc={require('../../persons/gustavo-chaves.jpeg')}
                                 buttonLink="#" buttonName="Inscrever-se"
                                 class="offset-m3"
                             />
