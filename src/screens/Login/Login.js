@@ -5,7 +5,11 @@ import api from '../../services/api'
 import '../CreateAccount/CreateAccount.css'
 
 
-export default class Login extends React.Component{
+export default class Login extends React.Component {
+
+    state = {
+        loginError: null
+    }
 
     constructor(props) {
         super(props)
@@ -26,6 +30,7 @@ export default class Login extends React.Component{
     }
 
     handleSubmit(data) {
+        this.setState({ loginError: null })
         api.post('/auth/signin', {email: data.email, password: data.password})
             .then((response)=>{
                 const result = response.data.data
@@ -33,8 +38,9 @@ export default class Login extends React.Component{
                 localStorage.setItem('userToken', result.token)
                 localStorage.setItem('userID', String(payload.user_id))
                 window.open('/perfil', '_self')
-            }).catch((error)=>{
-                console.log(error.response.data)
+            }).catch(error => {
+                const message = error.response.status === 400 ? 'Email ou Senha Inválidos' : 'Erro no servidor, tente novamente mais tarde'
+                this.setState({ loginError: message })
             })
     }
 
@@ -51,6 +57,7 @@ export default class Login extends React.Component{
                     <Input className="formInput" name="email" type="email" placeholder="Seu email"/>
                     <Input className="formInput" name="password" type="password" placeholder="Senha"/>
                     
+                    <p>{this.state.loginError}</p>
                     <button className="submitBtn" type="submit">Entrar</button>
                 </Form>
             </div>
