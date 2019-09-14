@@ -12,6 +12,7 @@ export default class CardHorizontal extends React.Component {
             buttonLink: props.buttonLink,
             buttonName: props.buttonName,
             size: props.size,
+            buttonDisabled: props.buttonDisabled
         }
     }
 
@@ -36,9 +37,11 @@ export default class CardHorizontal extends React.Component {
                             <span class="card-title">{this.state.title}</span>
                             {this.renderContent()}
                         </div>
-                        <div className="card-action">
-                            <a href={this.state.buttonLink}>{this.state.buttonName}</a>
-                        </div>
+                        {!this.state.buttonDisabled && 
+                            <div className="card-action">
+                               <a href={this.state.buttonLink}>{this.state.buttonName}</a>
+                            </div>
+                        }
                     </div>
                 </div>
             </div>
