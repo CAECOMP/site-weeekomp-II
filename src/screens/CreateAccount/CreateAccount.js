@@ -9,6 +9,9 @@ export default class CreateAccount extends React.Component{
 
     constructor(props){
         super(props)
+        const userID = localStorage.getItem('userID')
+        const authToken = localStorage.getItem('userToken')
+        if (userID && authToken) window.open('/perfil', '_self')
         this.state = {message: ''}
     }
 
@@ -36,6 +39,7 @@ export default class CreateAccount extends React.Component{
             localStorage.setItem('userToken', result.token)
             localStorage.setItem('userID', result.userinfo.user_id)
             localStorage.setItem('userName', result.userinfo.name)
+            window.open('/perfil', '_self')
             
         })
         .catch((error)=>{
@@ -53,7 +57,7 @@ export default class CreateAccount extends React.Component{
         });
 
         return (
-            <div className="containerCreateAccount">
+            <div className="containerCreateAccount" style={{backgroundColor: '#461000'}}>
                 <img className="logoCreateAccount" src="logo.png" alt=""/>
                 <p>{this.state.message}</p>
                 <Form className="formCreateAccount" schema={schema} onSubmit={this.handleSubmit}>

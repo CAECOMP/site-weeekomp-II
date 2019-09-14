@@ -4,7 +4,7 @@ import Navbar from '../../components/commons/navbar'
 import Banner from '../../components/banner'
 import Title from '../../components/title';
 import Divider from '../../components/divider';
-import Carousel from '../../components/carousel';
+// import Carousel from '../../components/carousel';
 import Footer from '../../components/commons/footer';
 import CardDefault from '../../components/cards/cardDefault';
 
@@ -32,7 +32,7 @@ export default class Home extends React.Component {
         return (
             <div>
                 <Navbar/>
-                <Banner imageSrc="banner.png"/>
+                <Banner imageSrc={require('../../talks/banner.png')}/>
 
                 <div className="containerCronograma">
                     <Title>Cronograma</Title>
@@ -54,7 +54,7 @@ export default class Home extends React.Component {
                         {/* <div className="row">
                             <CardDefault title="" 
                                 imageSrc="seg.png" 
-                                description="Kingsdom's day é o dia voltado aos grandes reinos da computação. Teremos palestras e mesa redonda para ajudar a nortear na escolha do caminho a se seguir durante e depois do curso."
+                                description="Kingsdom's day é o dia voltado aos grandes reinos da computação. Teremos palestras e mesa redonda para ajudar a nortear a escolha do caminho a se seguir durante e depois do curso."
                                 pageLink="/evento/segunda"
                             />
                             <CardDefault title="" 
@@ -64,7 +64,7 @@ export default class Home extends React.Component {
                             />
                             <CardDefault title="" 
                                 imageSrc="quar.png" 
-                                description="GameArt’s Day é o dia para aqueles que gostam da carreira de desenvolvimento de jogos e ilustração. Teremos práticas voltadas a essa área e de noite teremos o Valhala Of Design!"
+                                description="GameArt’s Day é o dia para aqueles que gostam da carreira de desenvolvimento de jogos e ilustração. Teremos práticas voltadas a essa área e de noite teremos o Walhalla Of Design!"
                                 pageLink="/evento/quarta"
                             />
                         </div>
@@ -85,9 +85,9 @@ export default class Home extends React.Component {
                     </div> 
                 </div>
 
-                <Divider/>
+                {/* <Divider/>
                 <Title>Loja</Title>
-                <Carousel itens={carouselItens}/>
+                <Carousel itens={carouselItens}/> */}
 
                 <Divider/>
                 <Footer/>

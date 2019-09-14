@@ -50,12 +50,13 @@
     padding-left: 8px;
     padding-right: 8px;
     margin-top: 15px;
+    width: 80%
 }
 
 .containerCreateAccount .submitBtn{
     background-color: black;
     border: black;
-    color: yellowgreen;
+    color: white;
     padding: 8px;
     margin-top: 16px;
     width: 50%;
@@ -64,4 +65,5 @@
 
 .containerCreateAccount .submitBtn:hover{
     cursor: pointer;
+    color: gray;
 }

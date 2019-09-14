@@ -14,7 +14,7 @@ export default class Banner extends React.Component {
             backgroundSize: "cover",
             backgroundPosition: "center",
             justifyContent: "center",
-            height: "60vh",
+            height: "70vh",
         }
 
         return(
