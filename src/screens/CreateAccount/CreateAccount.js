@@ -5,11 +5,7 @@ import api from '../../services/api'
 import './CreateAccount.css'
 
 
-export default class CreateAccount extends React.Component{
-
-    state = {
-        loginError: null
-    }
+export default class CreateAccount extends React.Component {
 
     constructor(props) {
         super(props)
@@ -17,10 +13,26 @@ export default class CreateAccount extends React.Component{
         const userID = localStorage.getItem('userID')
         const authToken = localStorage.getItem('userToken')
         if (userID && authToken) window.open('/perfil', '_self')
+        this.state = {message: ''}
     }
 
-    handleSubmit(data) {
-        this.setState({ loginError: null })
+    cleanErrorMessage = () =>{
+        this.setState({message: ''})
+    }
+
+    handleErrorMessage = (message) =>  {
+        switch(message.data){
+            case 'User already exists':
+                this.setState({message: 'Email/Senha está inválido'})
+                break;
+            default:
+                this.setState({message: 'Algum erro aconteceu :/, tente novamente'})
+                break;
+        }
+    }
+
+    handleSubmit = (data) =>{
+        this.cleanErrorMessage()
         api.post('/auth/signup', {name: data.name_person, email: data.email, password: data.password})
         .then((response)=>{
             const result = response.data.data
@@ -29,9 +41,8 @@ export default class CreateAccount extends React.Component{
             localStorage.setItem('userName', result.userinfo.name)
             window.open('/perfil', '_self')
         })
-        .catch(error => {
-            const message = error.response.status === 400 ? 'Email já cadastrado' : 'Erro no servidor, tente novamente mais tarde'
-            this.setState({ loginError: message })
+        .catch((error)=>{
+            this.handleErrorMessage(error.response.data)
         })
     }
 
@@ -42,18 +53,17 @@ export default class CreateAccount extends React.Component{
             password: Yup.string().required('Uma senha é necessária'),
             confirm_password: Yup.string().oneOf([Yup.ref('password'), null], 'As senhas devem ser iguais')
         })
-
+        
         return (
             <div className="containerCreateAccount" style={{backgroundColor: '#461000'}}>
                 <img className="logoCreateAccount" src="logo.png" alt=""/>
-                {/* <p>{this.state.errorMessage}</p> */}
+                <p>{this.state.message}</p>
                 <Form className="formCreateAccount" schema={schema} onSubmit={this.handleSubmit}>
                     <Input className="formInput" name="name_person" type="text" placeholder="Nome completo"/>
                     <Input className="formInput" name="email" type="email" placeholder="Seu email"/>
                     <Input className="formInput" name="password" type="password" placeholder="Senha"/>
                     <Input className="formInput" name="confirm_password" type="password" placeholder="Confirme senha"/>
 
-                    <p>{this.state.loginError}</p>
                     <button className="submitBtn" type="submit">Cadastrar</button>
                 </Form>
             </div>
