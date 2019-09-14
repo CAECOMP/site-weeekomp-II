@@ -23,7 +23,7 @@ export default class CreateAccount extends React.Component {
     handleErrorMessage = (message) =>  {
         switch(message.data){
             case 'User already exists':
-                this.setState({message: 'Email/Senha está inválido'})
+                this.setState({message: 'Usuário já cadastrado'})
                 break;
             default:
                 this.setState({message: 'Algum erro aconteceu :/, tente novamente'})
