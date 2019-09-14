@@ -5,17 +5,18 @@ import api from '../../services/api'
 import '../CreateAccount/CreateAccount.css'
 
 
-export default class Login extends React.Component{
-
+export default class Login extends React.Component {
+  
     constructor(props){
         super(props)
         this.state = {message: ''}
+        this.handleSubmit = this.handleSubmit.bind(this)
         const userID = localStorage.getItem('userID')
         const authToken = localStorage.getItem('userToken')
         if (userID && authToken) window.open('/perfil', '_self')
     }
-
-    cleanErrorMessage = () =>{
+  
+    cleanErrorMessage = () => {
         this.setState({message: ''})
     }
 
@@ -29,8 +30,8 @@ export default class Login extends React.Component{
                 break;
         }
     }
-
-    parseJwt = (token) =>{
+    
+    parseJwt (token) {
         var base64Url = token.split('.')[1];
         var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
         var jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
@@ -42,27 +43,25 @@ export default class Login extends React.Component{
     
     handleSubmit = async (data) => {
         this.cleanErrorMessage()
-        api.post('/auth/signin',
-        {email: data.email, password: data.password})
-        .then((response)=>{
-            const result = response.data.data
-            const payload = this.parseJwt(result.token)
-            localStorage.setItem('userToken', result.token)
-            localStorage.setItem('userID', String(payload.user_id))
-            window.open('/perfil', '_self')
-        })
-        .catch((error)=>{
-            this.handleErrorMessage(error.response.data)
-        })
+        api.post('/auth/signin', {email: data.email, password: data.password})
+          .then((response)=>{
+              const result = response.data.data
+              const payload = this.parseJwt(result.token)
+              localStorage.setItem('userToken', result.token)
+              localStorage.setItem('userID', String(payload.user_id))
+              window.open('/perfil', '_self')
+          })
+          .catch((error)=>{
+              this.handleErrorMessage(error.response.data)
+          })
     }
 
-    render(){
-
+    render() {
         const schema = Yup.object().shape({
             email: Yup.string().email().required('Seu email é obrigatório'),
             password: Yup.string().required('Uma senha é necessária')
-        });
-
+        })
+        
         return (
             <div className="containerCreateAccount" style={{backgroundColor: '#461000'}}>
                 <img className="logoCreateAccount" src="logo.png" alt=""/>
@@ -74,7 +73,6 @@ export default class Login extends React.Component{
                     <button className="submitBtn" type="submit">Entrar</button>
                 </Form>
             </div>
-            
         )
     }
 

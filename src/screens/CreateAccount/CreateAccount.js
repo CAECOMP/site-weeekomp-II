@@ -5,10 +5,11 @@ import api from '../../services/api'
 import './CreateAccount.css'
 
 
-export default class CreateAccount extends React.Component{
+export default class CreateAccount extends React.Component {
 
-    constructor(props){
+    constructor(props) {
         super(props)
+        this.handleSubmit = this.handleSubmit.bind(this)
         const userID = localStorage.getItem('userID')
         const authToken = localStorage.getItem('userToken')
         if (userID && authToken) window.open('/perfil', '_self')
@@ -32,30 +33,27 @@ export default class CreateAccount extends React.Component{
 
     handleSubmit = (data) =>{
         this.cleanErrorMessage()
-        api.post('/auth/signup', 
-        {name: data.name_person, email: data.email, password: data.password})
+        api.post('/auth/signup', {name: data.name_person, email: data.email, password: data.password})
         .then((response)=>{
             const result = response.data.data
             localStorage.setItem('userToken', result.token)
             localStorage.setItem('userID', result.userinfo.user_id)
             localStorage.setItem('userName', result.userinfo.name)
             window.open('/perfil', '_self')
-            
         })
         .catch((error)=>{
             this.handleErrorMessage(error.response.data)
         })
     }
 
-    render(){
-
+    render() {
         const schema = Yup.object().shape({
             name_person: Yup.string().required('Seu nome é obrigatório'),
             email: Yup.string().email().required('Seu email é obrigatório'),
             password: Yup.string().required('Uma senha é necessária'),
             confirm_password: Yup.string().oneOf([Yup.ref('password'), null], 'As senhas devem ser iguais')
-        });
-
+        })
+        
         return (
             <div className="containerCreateAccount" style={{backgroundColor: '#461000'}}>
                 <img className="logoCreateAccount" src="logo.png" alt=""/>
@@ -69,7 +67,6 @@ export default class CreateAccount extends React.Component{
                     <button className="submitBtn" type="submit">Cadastrar</button>
                 </Form>
             </div>
-            
         )
     }
 

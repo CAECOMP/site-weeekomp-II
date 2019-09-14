@@ -6,18 +6,24 @@ import Navbar from '../../components/commons/navbar';
 import CardHorizontal from '../../components/cards/cardHorizontal';
 import api from '../../services/api'
 import info from '../../staticInfo/store'
-import { longStackSupport } from 'q';
+// import { longStackSupport } from 'q';
 
 export default class Profile extends React.Component {
 
     state = {
         userInfo: null,
         orders: [],
-        registrations: []
+        registrations: [],
+        loading: true
     }
 
     constructor(props) {
         super(props)
+        this.logout = this.logout.bind(this)
+        // this.getUserInfo = this.getUserInfo.bind(this)
+    }
+
+    componentDidMount() {
         this.getUserInfo()
     }
 
@@ -42,6 +48,7 @@ export default class Profile extends React.Component {
             if (ordersResponse.data.error == false) 
                 this.setState({ orders: ordersResponse.data.data })
         }
+        this.setState({ loading: false })
     }
 
     logout() {
@@ -57,31 +64,35 @@ export default class Profile extends React.Component {
                 <Navbar />
                 {!this.state.userInfo ?
                 <div>
-                    <Title>Entre na Weekomp</Title>
-                    <div className="container">
-                        <div class="row">
-                            <div class="col s12 m6 l4 offset-l4">
-                                <a href="/login" style={{ color: 'white' }}>
-                                    <div class="card-panel red darken-4">
-                                        <h5 className="center">Entrar</h5>
+                    {!this.state.loading &&
+                        <div>
+                            <Title>Entre na Weekomp</Title>
+                            <div className="container">
+                                <div class="row">
+                                    <div class="col s12 m6 l4 offset-l4">
+                                        <a href="/login" style={{ color: 'white' }}>
+                                            <div class="card-panel red darken-4">
+                                                <h5 className="center">Entrar</h5>
+                                            </div>
+                                        </a>
                                     </div>
-                                </a>
-                            </div>
-                            <div class="col s12 m6 l4 offset-l4">
-                                <a href="/cadastro" style={{ color: 'white' }}>
-                                    <div class="card-panel red darken-4">
-                                        <h5 className="center">Cadastrar</h5>
+                                    <div class="col s12 m6 l4 offset-l4">
+                                        <a href="/cadastro" style={{ color: 'white' }}>
+                                            <div class="card-panel red darken-4">
+                                                <h5 className="center">Cadastrar</h5>
+                                            </div>
+                                        </a>
                                     </div>
-                                </a>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    }
                 </div>
                 :
                 <div>
                     <Title> {this.state.userInfo.name} </Title>
                     <div className="center-align">
-                        <button class="btn-small waves-effect waves-light" style={{backgroundColor: '#461000', color: 'white'}} onClick={this.logout()}>
+                        <button class="btn-small waves-effect waves-light" style={{backgroundColor: '#461000', color: 'white'}} onClick={this.logout}>
                             Logout
                         </button>
                     </div>
@@ -120,8 +131,9 @@ export default class Profile extends React.Component {
                                         title={(o.product_id > 0 && o.product_id < 6) ? 'Camisa Weekomp' : 
                                             info.products.filter(p => p.id === o.product_id)[0].name}
                                         content={`R$ ${o.value}`}
-                                        imageSrc={(o.product_id > 0 && o.product_id < 6) ? '/static/media/shirt.98afe474.png' : 
+                                        imageSrc={(o.product_id > 0 && o.product_id < 6) ? 'https://weekomp-images.s3.us-east-2.amazonaws.com/products/shirts/shirt.png' : 
                                             info.products.filter(p => p.id === o.product_id)[0].imgSrc}
+                                        buttonDisabled='true'
                                     />
                                 </div>
                             ))}
