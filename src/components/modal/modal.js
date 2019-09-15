@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 // import ReactDOM from 'react-dom';
 import M from 'materialize-css';
-import info from '../../staticInfo/store'
-import api from '../../services/api'
+import info from '../../staticInfo/store';
+import api from '../../services/api';
 
 export default class Modal extends Component {
   constructor(props) {
     super(props);
-    this.buyButtonDidPressed = this.buyButtonDidPressed.bind(this)
+    this.buyButtonDidPressed = this.buyButtonDidPressed.bind(this);
     this.state = {
       quantity: 1,
       purchaseMade: null,
@@ -29,35 +29,35 @@ export default class Modal extends Component {
   }
 
   getRequestRequirements() {
-    const userID = localStorage.getItem('userID')
-    const authToken = localStorage.getItem('userToken')
-    const requestOptions = { headers: { 'Authorization': `Bearer ${authToken}` } }
-    return { userID, requestOptions }
+    const userID = localStorage.getItem('userID');
+    const authToken = localStorage.getItem('userToken');
+    const requestOptions = { headers: { Authorization: `Bearer ${authToken}` } };
+    return { userID, requestOptions };
   }
 
   async buyProduct(productName) {
-    const { userID, requestOptions } = this.getRequestRequirements()
-    const { quantity } = this.state
-    const product = productName.includes('Camiseta') ?
-      { id: 'aki jaz o id baseado no checkbox selecionado no modal' } :
-      info.products.filter(p => p.name === productName)[0]
-    const body = [{ product_id: product.id, quantity }]
+    const { userID, requestOptions } = this.getRequestRequirements();
+    const { quantity } = this.state;
+    const product = productName.includes('Camiseta')
+      ? { id: 'aki jaz o id baseado no checkbox selecionado no modal' }
+      : info.products.filter(p => p.name === productName)[0];
+    const body = [{ product_id: product.id, quantity }];
     try {
-      await api.post(`/salesorder/${userID}`, body, requestOptions)
-      this.setState({ purchaseMade: true })
+      await api.post(`/salesorder/${userID}`, body, requestOptions);
+      this.setState({ purchaseMade: true });
     } catch (error) {
-      this.setState({ purchaseMade: false })
+      this.setState({ purchaseMade: false });
     }
   }
 
   buyCombo(comboName) {
-    console.log(comboName)
+    console.log(comboName);
   }
 
   buyButtonDidPressed(e) {
-    e.target.disabled = true
-    const { modalId } = this.props
-    modalId.includes('COMBO') ? this.buyCombo(modalId) : this.buyProduct(modalId)
+    e.target.disabled = true;
+    const { modalId } = this.props;
+    modalId.includes('COMBO') ? this.buyCombo(modalId) : this.buyProduct(modalId);
   }
 
   render() {
@@ -77,29 +77,30 @@ export default class Modal extends Component {
           <div className="row">
             <h4 class="center-align">{title}</h4>
           </div>
-          <div class="row">
-            <div class="input-field col s12 white-text">
-              <select>
-                <option class="white-text" value="1">
-                  PP
-                </option>
-                <option class="white-text" value="2">
-                  P
-                </option>
-                <option class="white-text" value="3">
-                  M
-                </option>
-                <option class="white-text" value="4">
-                  G
-                </option>
-                <option class="white-text" value="5">
-                  GG
-                </option>
-              </select>
-              <label class="white-text">Tamanho:</label>
+          {hasSize ? (
+            <div class="row">
+              <div class="input-field col s12 white-text">
+                <select>
+                  <option class="white-text" value="1">
+                    PP
+                  </option>
+                  <option class="white-text" value="2">
+                    P
+                  </option>
+                  <option class="white-text" value="3">
+                    M
+                  </option>
+                  <option class="white-text" value="4">
+                    G
+                  </option>
+                  <option class="white-text" value="5">
+                    GG
+                  </option>
+                </select>
+                <label class="white-text">Tamanho:</label>
+              </div>
             </div>
-          </div>
-
+          ) : null}
           <div class="row">
             <div class="col s12">
               Quantidade:
@@ -120,27 +121,28 @@ export default class Modal extends Component {
           <div className="row">
             <h5 class="right-align">{`Preço total: R$ ${totalPrice.toFixed(2)}`}</h5>
           </div>
-          {this.state.purchaseMade == null ?
-            (
-              <div className="container center-align row">
-                <button
-                  class="btn waves-effect white red darken-4 waves-light"
-                  type="submit"
-                  name="action"
-                  onClick={this.buyButtonDidPressed}
-                >
-                  Reservar
-                  {/* <i class="material-icons right red darken-4">send</i> */}
-                </button>
-              </div>
-            )
-            :
-            <p class="center-align" style={this.state.purchaseMade ? {color: 'green'} : {color: 'red'}}>
-            {this.state.purchaseMade ? 
-              'Reserva efetuada com sucesso, faça o pagamento junto ao CAECOMP' :
-              'Erro ao realizar a compra, tente novamente mais tarde'
-            }</p>
-          }
+          {this.state.purchaseMade == null ? (
+            <div className="container center-align row">
+              <button
+                class="btn waves-effect white red darken-4 waves-light"
+                type="submit"
+                name="action"
+                onClick={this.buyButtonDidPressed}
+              >
+                Reservar
+                {/* <i class="material-icons right red darken-4">send</i> */}
+              </button>
+            </div>
+          ) : (
+            <p
+              class="center-align"
+              style={this.state.purchaseMade ? { color: 'green' } : { color: 'red' }}
+            >
+              {this.state.purchaseMade
+                ? 'Reserva efetuada com sucesso, faça o pagamento junto ao CAECOMP'
+                : 'Erro ao realizar a compra, tente novamente mais tarde'}
+            </p>
+          )}
           <div className="container center-align">
             <a href="#!" className="modal-close waves-effect white-text waves-green btn-flat">
               {!this.state.purchaseMade ? 'Cancelar' : 'Fechar'}
