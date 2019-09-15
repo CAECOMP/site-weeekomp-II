@@ -24,7 +24,7 @@ export default class Tuesday extends React.Component {
                                 content={
                                     <div>
                                         &emsp;
-                                        <h6 className="amber-text text-accent-4">LOCAL: Sala LMC-01.</h6>
+                                        <h6 className="amber-text text-accent-4">LOCAL: LMC 01.</h6>
                                         <h6 className="amber-text text-accent-4">HORÁRIO: 8h - 12h.</h6>
                                         &emsp;
                                         <p>O workshop irá introduzir alguns conceitos de IoT utilizando Arduino, mostrando na prática como fazer algumas aplicações simples com WiFi.</p>
@@ -57,7 +57,7 @@ export default class Tuesday extends React.Component {
                                         &emsp;
                                         <p>-> "Devepos + Tests";</p>
                                         <p>-> Cultura Devops;</p>
-                                        <p>-> Por que CI&CD?;</p>
+                                        <p>-> Por que CI e CD?;</p>
                                         <p>-> Intro com Testes Unitários.</p>
                                     </div>
                                 }

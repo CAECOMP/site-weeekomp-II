@@ -22,14 +22,30 @@ export default class Wednesday extends React.Component {
                         <div className="row">
                             <CardSmall
                                 title="Italo Furtado - Primeiros passos para Valhalla"
-                                content="Neste Workshop iremos introduzir a prototipação e desenvolvimento de jogos através de uma experiência prática utilizando Construct 2 e Piskel, iremos fazer um passo a passo para a construção de um jogo, entendendo não somente as etapas, mas processos cruciais para o desenvolvimento de um entretenimento que atenda a demanda do público jogador."
+                                content={
+                                    <div>
+                                        &emsp;
+                                        <h6 className="amber-text text-accent-4">LOCAL: LMC 03.</h6>
+                                        <h6 className="amber-text text-accent-4">HORÁRIO: 8h - 12h.</h6>
+                                        &emsp;
+                                        <p>Neste Workshop iremos introduzir a prototipação e desenvolvimento de jogos através de uma experiência prática utilizando Construct 2 e Piskel, iremos fazer um passo a passo para a construção de um jogo, entendendo não somente as etapas, mas processos cruciais para o desenvolvimento de um entretenimento que atenda a demanda do público jogador.</p>
+                                    </div>
+                                }
                                 imageSrc={require('../../persons/italo-furtado.jpg')}
                                 buttonLink="#" buttonName="Inscrever-se"
                                 class="offset-m3"
                             />
                             <CardSmall
                                 title="Gustavo Chaves - UI e UX: Teoria e Prática com Adobe XD"
-                                content="Nesta oficina será ensinado sobre os entregáveis de UX e como usá-los para construir interfaces de apps."
+                                content={
+                                    <div>
+                                        &emsp;
+                                        <h6 className="amber-text text-accent-4">LOCAL: LMC 03.</h6>
+                                        <h6 className="amber-text text-accent-4">HORÁRIO: 14h - 18h.</h6>
+                                        &emsp;
+                                        <p>Nesta oficina será ensinado sobre os entregáveis de UX e como usá-los para construir interfaces de apps.</p>
+                                    </div>
+                                }
                                 imageSrc={require('../../persons/gustavo-chaves.jpeg')}
                                 buttonLink="#" buttonName="Inscrever-se"
                                 class="offset-m3"
@@ -38,6 +54,11 @@ export default class Wednesday extends React.Component {
                                 title="Valhalla of Design"
                                 content={
                                     <div>
+                                        &emsp;
+                                        <h6 className="amber-text text-accent-4">LOCAL: Auditório Iran Raupp.</h6>
+                                        <h6 className="amber-text text-accent-4">HORÁRIO: 18h30.</h6>
+                                        &emsp;
+
                                         <p>Amanda Tavares</p>
                                         <p>-> Tema: Pesquisa, Referência e Embasamento em Design</p>
                                         <p>-> Descrição: Quando criamos novos projetos ou funcionalidades para nossos produtos, tendemos a acreditar muito no nosso próprio conhecimento. Será que apenas sua visão de mundo é capaz de representar o resto da população e especialistas na área? Nessa palestra, irei explanar sobre por que e como incluir pesquisas no seu processo como forma de trazer soluções ainda melhores para os seus desafios.</p>
