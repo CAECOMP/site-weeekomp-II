@@ -4,15 +4,19 @@
     align-items: center;
     align-content: center;
     background-color: red;
+    min-width: 350px;
     width: 40%;
     height: 80%;
     padding: 16px;
-    margin-left: 30%;
+    margin: auto;
+    margin-top: 15%;
+    /* margin-left: 30%;
     margin-right: 30%;
     margin-top: 10%;
-    margin-bottom: 10%;
+    margin-bottom: 10%; */
     border-radius: 5px;
-
+    animation-name: fade;
+    animation-duration: 800ms;
 }
 
 .containerCreateAccount .logoCreateAccount{
@@ -27,6 +31,17 @@
     width: 100%;
     align-items: center;
     align-content: center;
+}
+
+@keyframes fade{
+    from{
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to{
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 .containerCreateAccount .formCreateAccount .formInput{
