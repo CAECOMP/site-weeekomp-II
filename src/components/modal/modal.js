@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
 import M from 'materialize-css';
 import info from '../../staticInfo/store'
+import { Combo } from '../../staticInfo/combo'
 import api from '../../services/api'
 
 export default class Modal extends Component {
+
+  CamisaID = { PP: 1, P: 2, M: 3, G: 4, GG: 5 }
+
   constructor(props) {
     super(props);
     this.buyButtonDidPressed = this.buyButtonDidPressed.bind(this)
@@ -47,8 +51,35 @@ export default class Modal extends Component {
     }
   }
 
-  buyCombo(comboName) {
-    console.log(comboName)
+  getComboInfo(comboName) {
+    let comboID, comboData
+    if (comboName.includes('2 Camisetas')) {
+      comboData = Combo.duasCamisas.mountBodyData({ id: 'id based radio' }, { id: 'id based radio' })
+      comboID = Combo.duasCamisas.id
+    } else if (comboName.includes('2 Cadernos')) {
+      comboData = Combo.doisCadernos.mountBodyData({ id: 'id based radio' }, { id: 'id based radio' })
+      comboID = Combo.doisCadernos.id
+    } else if (comboName.includes('2 Bottons')) {
+      comboData = Combo.doisBottons.mountBodyData({ id: 'id based radio' }, { id: 'id based radio' })
+      comboID = Combo.doisBottons.id
+    } else if (comboName.includes('3 Bottons')) {
+      comboData = Combo.tresBottons.mountBodyData({ id: 'id based radio' }, { id: 'id based radio' }, { id: 'id based radio' })
+      comboID = Combo.tresBottons.id
+    }
+    return { comboID, comboData }
+  }
+
+  async buyCombo(comboName) {
+    const { comboID, comboData } = this.getComboInfo(comboName)
+    const { userID, requestOptions } = this.getRequestRequirements()
+    const { quantity } = this.state
+    const body = [{ combo_id: comboID, data: comboData, quantity }]
+    try {
+      await api.post(`/combos/${userID}`, body, requestOptions)
+      this.setState({ purchaseMade: true })
+    } catch (error) {
+      this.setState({ purchaseMade: false })
+    }
   }
 
   buyButtonDidPressed(e) {
