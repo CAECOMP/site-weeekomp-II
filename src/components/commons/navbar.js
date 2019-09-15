@@ -25,7 +25,7 @@ export default class Navbar extends React.Component {
                                 <a href="#" data-target="mobile-demo" className="sidenav-trigger"><i className="material-icons">menu</i></a>
                                 <ul id="nav-mobile" className="right hide-on-med-and-down">
                                     <li><a href="/loja/">Loja</a></li>
-                                    <li><a href="/regras/">Regras</a></li>
+                                    <li><a href="/regras/">Info</a></li>
                                     <li><a href="/perfil/">Perfil</a></li>
                                 </ul>
                             </div>
@@ -34,7 +34,7 @@ export default class Navbar extends React.Component {
                 </div>
                 <ul className="sidenav" id="mobile-demo">
                     <li><a href="/loja/">Loja</a></li>
-                    <li><a href="/regras/">Regras</a></li>
+                    <li><a href="/regras/">Info</a></li>
                     <li><a href="/perfil/">Perfil</a></li>
                 </ul>
             </div>

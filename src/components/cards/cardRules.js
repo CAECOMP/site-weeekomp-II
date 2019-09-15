@@ -35,13 +35,14 @@ export default class CardDefault extends React.Component {
 
         const title = 
                 <span className={`card-title ${this.state.centerTitle ? "center-align" : ""}`}>
-                       <i> <FontAwesomeIcon icon={faInfoCircle} color='white' className='fa-sm'  /> </i>
-                        {this.state.title}
+                         <i> <FontAwesomeIcon icon={faInfoCircle} color='white' className='fa-sm'  /> </i>
+                            {this.state.title}
                 </span>
 
         const imgTitle = 
                 <div>
                     <img src={this.state.imageSrc}/>
+                    
                     {title}
                 </div>
 

@@ -30,12 +30,12 @@ class Rules extends Component{
         return(
             <div>
                 <Navbar/>
-                <CardDefault title='Sobre a loja:'  description={this.state.InfoStore} /> 
-                <CardDefault title='Sobre as Inscrições'  description={this.state.infoSubs} /> 
-                <CardDefault title='Sobre os Certificados'  description={this.state.infoDip} />
+                <CardDefault title='Informações  Loja:'  description={this.state.InfoStore} /> 
+                <CardDefault title='Informações  Inscrições'  description={this.state.infoSubs} /> 
+                <CardDefault title='Informações Certificados'  description={this.state.infoDip} />
                 <CardDefault title='Parceria '  description={this.state.infopart} />
                 <CardDefault title='Impacto Sertão Kids '  description={this.state.infoKids} />
-                <CardDefault title='Pagamentos '  description={this.state.infopay} />
+                <CardDefault title='Informações Pagamentos '  description={this.state.infopay} />
                 <Footer/>
             </div>
             
