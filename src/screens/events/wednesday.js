@@ -51,7 +51,7 @@ export default class Wednesday extends React.Component {
                                 class="offset-m3"
                             />
                             <CardBig
-                                title="Valhalla of Design"
+                                title="Walhalla of Design"
                                 content={
                                     <div>
                                         &emsp;
@@ -59,13 +59,13 @@ export default class Wednesday extends React.Component {
                                         <h6 className="amber-text text-accent-4">HORÁRIO: 18h30.</h6>
                                         &emsp;
 
-                                        <p>Amanda Tavares</p>
+                                        <p className="amber-text text-accent-4">Amanda Tavares</p>
                                         <p>-> Tema: Pesquisa, Referência e Embasamento em Design</p>
                                         <p>-> Descrição: Quando criamos novos projetos ou funcionalidades para nossos produtos, tendemos a acreditar muito no nosso próprio conhecimento. Será que apenas sua visão de mundo é capaz de representar o resto da população e especialistas na área? Nessa palestra, irei explanar sobre por que e como incluir pesquisas no seu processo como forma de trazer soluções ainda melhores para os seus desafios.</p>
-                                        <p>Levy Christian</p>
+                                        <p className="amber-text text-accent-4">Levy Christian</p>
                                         <p>-> Tema: Priorização e Hierarquização no Design.</p>
                                         <p>-> Descrição: Uma abordagem explanatoria sobre a priorização e hierarquização que um Design deve ter em mente quando estiver trabalhando em um projeto.</p>
-                                        <p>Vicenzo Pegazo</p>
+                                        <p className="amber-text text-accent-4">Vicenzo Pegazo</p>
                                         <p>-> Tema: Tierarr -> Ite’arr -> Iterar</p>
                                         <p>-> Descrição: Nesta palestra será demonstrado como incrementar um bom design junto ao usuário para construir uma boa experiência.</p>
                                     </div>
