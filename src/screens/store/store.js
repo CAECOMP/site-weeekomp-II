@@ -82,7 +82,7 @@ export default class Store extends React.Component {
             ))}
           </div>
           {info.products.map(i => (
-            <Modal modalId={i.name} title={i.description} price={i.price} />
+            <Modal modalId={i.name} title={i.description} price={i.price} hasSize />
           ))}
         </div>
 

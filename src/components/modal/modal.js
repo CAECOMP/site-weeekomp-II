@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+// import ReactDOM from 'react-dom';
 import M from 'materialize-css';
 import info from '../../staticInfo/store'
 import { Combo } from '../../staticInfo/combo'
@@ -27,6 +28,8 @@ export default class Modal extends Component {
       endingTop: '20%',
     };
     M.Modal.init(this.Modal, options);
+
+    M.AutoInit();
   }
 
   getRequestRequirements() {
@@ -89,7 +92,7 @@ export default class Modal extends Component {
   }
 
   render() {
-    const { modalId, title, price } = this.props;
+    const { modalId, title, price, hasSize } = this.props;
     const { quantity } = this.state;
     const totalPrice = quantity * price;
     return (
@@ -105,6 +108,29 @@ export default class Modal extends Component {
           <div className="row">
             <h4 class="center-align">{title}</h4>
           </div>
+          <div class="row">
+            <div class="input-field col s12 white-text">
+              <select>
+                <option class="white-text" value="1">
+                  PP
+                </option>
+                <option class="white-text" value="2">
+                  P
+                </option>
+                <option class="white-text" value="3">
+                  M
+                </option>
+                <option class="white-text" value="4">
+                  G
+                </option>
+                <option class="white-text" value="5">
+                  GG
+                </option>
+              </select>
+              <label class="white-text">Tamanho:</label>
+            </div>
+          </div>
+
           <div class="row">
             <div class="col s12">
               Quantidade:
