@@ -2,13 +2,13 @@ import React,{Component} from 'react'
 import Navbar from '../../components/commons/navbar'
 import Footer from '../../components/commons/footer'
 import CardDefault from '../../components/cards/cardRules'
-import { type } from 'os';
+
 
 class Rules extends Component{
    constructor(props){
        super(props)
        this.state ={
-           InfoStore : ['A loja estará disponível para todos que fizerem a primeira parte da inscrição.',
+            InfoStore : ['A loja estará disponível para todos que fizerem a primeira parte da inscrição.',
            'PEDIDOS ATÉ DIA 28 DE SETEMBRO.','Após passado o prazo os pedidos estarão encerrados!',
            'Entrega de produtos serão feitas durante a Weekomp']
            ,infoSubs:['São duas etapas para se inscrever na WEEKOMP II:',
