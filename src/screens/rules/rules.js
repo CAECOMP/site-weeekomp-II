@@ -9,7 +9,7 @@ class Rules extends Component{
        super(props)
        this.state ={
            InfoStore : ['A loja estará disponível para todos que fizerem a primeira parte da inscrição.',
-           'PEDIDOS ATÉ DIA 28 DE SETEMBRO.','Após passado o prazo os pedidos estarão encerrados!',
+           'PEDIDOS ATÉ DIA 27 DE SETEMBRO.','Após passado o prazo os pedidos estarão encerrados!',
            'Entrega de produtos serão feitas durante a Weekomp']
            ,infoSubs:['São duas etapas para se inscrever na WEEKOMP II:',
            '1 - Inscrição Pelo Site:',
