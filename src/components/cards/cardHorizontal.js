@@ -43,7 +43,11 @@ export default class CardHorizontal extends React.Component {
             </div>
             {!this.state.buttonDisabled && (
               <div className="card-action">
-                <a class="modal-trigger" href={this.state.buttonLink}>
+                {/* <a class="modal-trigger" href={this.state.buttonLink}> */}
+                <a
+                  class="modal-trigger"
+                  href={localStorage.getItem('userToken') ? this.state.buttonLink : '/login'}
+                >
                   {this.state.buttonName}
                 </a>
               </div>
