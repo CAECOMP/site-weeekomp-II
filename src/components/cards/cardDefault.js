@@ -8,6 +8,8 @@ export default class CardDefault extends React.Component {
             imageSrc: props.imageSrc,
             description: props.description,
             title: props.title,
+            buttonLink: props.buttonLink,
+            buttonName: props.buttonName,
             pageLink: props.pageLink,
             class: `col ${props.colSize != null ? props.colSize : "s12 m4"} ${props.class}`,
             size: props.size,
@@ -48,8 +50,10 @@ export default class CardDefault extends React.Component {
                         {this.state.imageSrc != null ? imgTitle : ""}
                     </div>
                     <div className="card-content">
-                    {this.state.imageSrc == null ? title : ""}
+                        {this.state.imageSrc == null ? title : ""}
                         {this.renderDescription()}
+                        &emsp;
+                        <p><a className="amber-text text-accent-4" href={this.state.buttonLink}>{this.state.buttonName}</a></p>
                     </div>
                     {this.state.pageLink != null ? cardActions : ""}
                 </div>
