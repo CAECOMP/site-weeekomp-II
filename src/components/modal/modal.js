@@ -89,7 +89,7 @@ export default class Modal extends Component {
     const { comboID, comboData } = this.getComboInfo(comboName)
     const { userID, requestOptions } = this.getRequestRequirements()
     const { quantity } = this.state
-    const body = [{ combo_id: comboID, data: comboData, quantity }]
+    const body = { combo_id: comboID, data: comboData, quantity }
     try {
       await api.post(`/combos/${userID}`, body, requestOptions)
       this.setState({ purchaseMade: true })

@@ -43,6 +43,9 @@ export default class Profile extends React.Component {
                     let day = new Date(r.event.day)
                     day.setHours(day.getHours() + 4)
                     r.event.day = day.toLocaleDateString()
+                    if (r.event.name === 'Oficina de ilustração') {
+                        r.event.name = 'UI e UX: Teoria e Prática com Adobe XD'
+                    }
                     return r
                 }) })
             if (ordersResponse.data.error == false) 

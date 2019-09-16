@@ -123,6 +123,9 @@ const info = {
           <p>&emsp;&emsp;&emsp;&emsp;Banco: 260 - Nu Pagamentos S.A.;</p>
           <p>&emsp;&emsp;&emsp;&emsp;Agência: 0001;</p>
           <p>&emsp;&emsp;&emsp;&emsp;Conta: 8270524-0.</p>
+          &emsp;
+          <p>OBS.: </p> 
+          <p>ENVIAR COMPROVANTE DE PAGAMENTO OU TRANSFERÊNCIA PARA O EMAIL: <span style={{color: 'green'}}> caecomp.ifce@gmail.com </span> </p>
         </div>,
       ],
     },

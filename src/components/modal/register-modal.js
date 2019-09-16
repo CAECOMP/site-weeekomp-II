@@ -80,7 +80,10 @@ export default class RegisterModal extends Component {
                   </button>
                 </div>
                 :
-                <p>{this.state.subscribed ?
+                <p
+                class="center-align"
+                style={this.state.purchaseMade ? { color: 'green' } : { color: 'red' }}
+                >{this.state.subscribed ?
                   'Pré inscrição realizada, confirme sua presença junto ao Centro Acadêmico' : 
                   'Erro na inscrição, tente novamente mais tarde'}
                 </p>
