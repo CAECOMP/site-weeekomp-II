@@ -23,7 +23,7 @@ export default class CardBig extends React.Component {
                     </div>
                     <div className="card-content">
                         <span className="card-title activator">{this.state.title}<i className="material-icons right">more_vert</i></span>
-                        <p><a className="amber-text text-accent-4" href={this.state.buttonLink}>{this.state.buttonName}</a></p>
+                        <p><a className="amber-text text-accent-4 modal-trigger" href={this.state.buttonLink}>{this.state.buttonName}</a></p>
                     </div>
                     <div className="card-reveal black">
                         <span className="card-title">{this.state.title}<i class="material-icons right">close</i></span>

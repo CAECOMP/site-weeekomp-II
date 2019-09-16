@@ -5,6 +5,7 @@ import Title from '../../components/title';
 import Footer from '../../components/commons/footer';
 import Divider from '../../components/divider';
 import CardBig from '../../components/cards/cardBig';
+import RegisterModal from '../../components/modal/register-modal'
 
 export default class Monday extends React.Component {
 
@@ -23,17 +24,20 @@ export default class Monday extends React.Component {
                                 title="The Last Ones - Lucas Tavares, André Vieira, Gabriela Bezerra e Luiza Macedo"
                                 content="Alunos perto de se formar irão contar suas experiências durante o curso e suas expectativas para o dia depois da conquista do diploma."
                                 imageSrc={require('../../talks/the-last-of-ones.png')}
-                                buttonLink="#" buttonName="Inscrever-se"
+                                buttonLink="#TheLastOnes" buttonName="Inscrever-se"
                             />
                             <CardBig
                                 title="Odin's Table - David, Alan Rabelo, Leo Silveira, Levi Moreira"
                                 content="Roda de conversa com ex-alunos que seguiram caminhos diferentes após a graduação. Falaremos com alunos de Mestrado, ex-alunos que abriram empresas ou foram para o mercado de trabalho. Eles irão tirar dúvidas e inspirar na hora de escolher o melhor caminho após a graduação."
                                 imageSrc={require('../../talks/odins-table.png')}
-                                buttonLink="#" buttonName="Inscrever-se"
+                                buttonLink="#OdinsTable" buttonName="Inscrever-se"
                             />
                         </div>
                     </div>
                 </div>
+
+                <RegisterModal eventId="TheLastOnes" title="The Last Ones" />
+                <RegisterModal eventId="OdinsTable" title="Odin's Table" />
 
                 <Divider />
                 <Footer />

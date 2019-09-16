@@ -7,7 +7,7 @@ import CardDefault from '../../components/cards/cardDefault';
 import CardHorizontal from '../../components/cards/cardHorizontal';
 import Footer from '../../components/commons/footer';
 import Modal from '../../components/modal/modal';
-import { write } from 'fs';
+// import { write } from 'fs';
 
 export default class Store extends React.Component {
   renderSpotlight() {
