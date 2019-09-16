@@ -99,10 +99,10 @@ export default class Modal extends Component {
   }
 
   buyButtonDidPressed(e) {
-    // e.target.disabled = true;
-    const { modalId } = this.props;
+    e.target.disabled = true
+    const { modalId } = this.props
     console.log(modalId)
-    // modalId.includes('COMBO') ? this.buyCombo(modalId) : this.buyProduct(modalId);
+    modalId.includes('COMBO') ? this.buyCombo(modalId) : this.buyProduct(modalId);
   }
 
   render() {
