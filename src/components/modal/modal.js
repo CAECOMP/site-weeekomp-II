@@ -22,8 +22,8 @@ export default class Modal extends Component {
       comboCaderno1: 'VERMELHO',
       comboCaderno2: 'VERMELHO',
       comboBotton1: 'MODELO_1',
-      comboBotton2: 'MODELO_2',
-      comboBotton3: 'MODELO_3',
+      comboBotton2: 'MODELO_1',
+      comboBotton3: 'MODELO_1',
     }
   }
 
@@ -66,16 +66,20 @@ export default class Modal extends Component {
   getComboInfo(comboName) {
     let comboID, comboData
     if (comboName.includes('2 Camisetas')) {
-      comboData = Combo.duasCamisas.mountBodyData({ id: 'id based radio' }, { id: 'id based radio' })
+      const { comboCamiseta1, comboCamiseta2 } = this.state
+      comboData = Combo.duasCamisas.mountBodyData({ id: CamisaID[comboCamiseta1] }, { id: CamisaID[comboCamiseta2] })
       comboID = Combo.duasCamisas.id
     } else if (comboName.includes('2 Cadernos')) {
-      comboData = Combo.doisCadernos.mountBodyData({ id: 'id based radio' }, { id: 'id based radio' })
+      const { comboCaderno1, comboCaderno2 } = this.state
+      comboData = Combo.doisCadernos.mountBodyData({ id: CadernoID[comboCaderno1] }, { id: CadernoID[comboCaderno2] })
       comboID = Combo.doisCadernos.id
     } else if (comboName.includes('2 Bottons')) {
-      comboData = Combo.doisBottons.mountBodyData({ id: 'id based radio' }, { id: 'id based radio' })
+      const { comboBotton1, comboBotton2 } = this.state
+      comboData = Combo.doisBottons.mountBodyData({ id: BottonID[comboBotton1] }, { id: BottonID[comboBotton2] })
       comboID = Combo.doisBottons.id
     } else if (comboName.includes('3 Bottons')) {
-      comboData = Combo.tresBottons.mountBodyData({ id: 'id based radio' }, { id: 'id based radio' }, { id: 'id based radio' })
+      const { comboBotton1, comboBotton2, comboBotton3 } = this.state
+      comboData = Combo.tresBottons.mountBodyData({ id: BottonID[comboBotton1] }, { id: BottonID[comboBotton2] }, { id: BottonID[comboBotton3] })
       comboID = Combo.tresBottons.id
     }
     return { comboID, comboData }
@@ -120,7 +124,7 @@ export default class Modal extends Component {
           </div>
 
           {/* CAMISETA SIZE SELECTOR */}
-          {hasSize && !this.props.modalId.includes('COMBO') ? (
+          {hasSize && !modalId.includes('COMBO') ? (
             <div class="row">
               <label class="white-text">Tamanho:</label>
               <div class="input-field col s12">
@@ -136,7 +140,7 @@ export default class Modal extends Component {
           ) : null}
 
           {/* COMBO 2 CAMISETAS SIZE SELECTOR */}
-          {this.props.modalId.includes('2 Camisetas') && (
+          {modalId.includes('2 Camisetas') && (
             <div>
             <label class="white-text">Tamanhos</label>
               <div class="row">
@@ -163,7 +167,7 @@ export default class Modal extends Component {
           )}
 
           {/* COMBO 2 CADERNOS SIZE SELECTOR */}
-          {this.props.modalId.includes('2 Cadernos') && (
+          {modalId.includes('2 Cadernos') && (
             <div>
               <label class="white-text">Cores</label>
                 <div class="row">
@@ -190,25 +194,25 @@ export default class Modal extends Component {
             )}
 
             {/* COMBO 2 CADERNOS SIZE SELECTOR */}
-          {this.props.modalId.includes('Bottons') && (
+          {modalId.includes('Bottons') && (
             <div>
               <label class="white-text">Modelos</label>
                 <div class="row">
-                  <div class={this.props.modalId.includes('3') ? 'input-field col s4' : 'input-field col s6' }>
+                  <div class={modalId.includes('3') ? 'input-field col s4' : 'input-field col s6' }>
                     <select class="browser-default" onChange={e => this.setState({ comboBotton1: e.target.value })}>
                       <option class="" value="MODELO_1"> Modelo 1 </option>
                       <option class="" value="MODELO_2"> Modelo 2 </option>
                       <option class="" value="MODELO_3"> Modelo 3 </option>
                     </select>
                   </div>
-                  <div class={this.props.modalId.includes('3') ? 'input-field col s4' : 'input-field col s6' }>
+                  <div class={modalId.includes('3') ? 'input-field col s4' : 'input-field col s6' }>
                     <select class="browser-default" onChange={e => this.setState({ comboBotton2: e.target.value })}>
                       <option class="" value="MODELO_1"> Modelo 1 </option>
                       <option class="" value="MODELO_2"> Modelo 2 </option>
                       <option class="" value="MODELO_3"> Modelo 3 </option>
                     </select>
                   </div>
-                  {this.props.modalId.includes('3') && (
+                  {modalId.includes('3') && (
                     <div class="input-field col s4">
                       <select class="browser-default" onChange={e => this.setState({ comboBotton3: e.target.value })}>
                         <option class="" value="MODELO_1"> Modelo 1 </option>
