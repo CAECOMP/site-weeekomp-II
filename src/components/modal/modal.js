@@ -4,9 +4,9 @@ import info from '../../staticInfo/store'
 import { Combo } from '../../staticInfo/combo'
 import api from '../../services/api'
 
-export default class Modal extends Component {
+const CamisaID = { 'PP': 1, 'P': 2, 'M': 3, 'G': 4, 'GG': 5 }
 
-  CamisaID = { PP: 1, P: 2, M: 3, G: 4, GG: 5 }
+export default class Modal extends Component {
 
   constructor(props) {
     super(props);
@@ -43,7 +43,7 @@ export default class Modal extends Component {
     const { userID, requestOptions } = this.getRequestRequirements();
     const { quantity } = this.state;
     const product = productName.includes('Camiseta')
-      ? { id: 'aki jaz o id baseado no checkbox selecionado no modal' }
+      ? { id: CamisaID[this.state.sizeSelected] }
       : info.products.filter(p => p.name === productName)[0];
     const body = [{ product_id: product.id, quantity }];
     try {
@@ -109,9 +109,9 @@ export default class Modal extends Component {
             <h4 class="center-align">{title}</h4>
           </div>
           {hasSize ? (
-            <div class="row">
+            <div class="row" className="white-text">
               <div class="input-field col s12 white-text">
-                <select onChange={e => this.setState({ sizeSelected: e.target.value })}>
+                <select className="white-text" onChange={e => this.setState({ sizeSelected: e.target.value })}>
                   <option class="white-text" value="PP">
                     PP
                   </option>
