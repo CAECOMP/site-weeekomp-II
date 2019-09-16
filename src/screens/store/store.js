@@ -23,7 +23,13 @@ export default class Store extends React.Component {
     );
 
     return (
-      <CardDefault colSize="s12 m6" imageSrc={imgSrc} title={title} description={description} />
+      <CardDefault
+        colSize="s12 m6"
+        imageSrc={imgSrc}
+        title={title}
+        description={description}
+        buttonLink={`#${title}`}
+        buttonName="COMPRAR" />
     );
   }
 

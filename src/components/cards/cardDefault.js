@@ -11,7 +11,9 @@ export default class CardDefault extends React.Component {
             pageLink: props.pageLink,
             class: `col ${props.colSize != null ? props.colSize : "s12 m4"} ${props.class}`,
             size: props.size,
-            centerTitle: props.centerTitle === undefined ? false : true
+            centerTitle: props.centerTitle === undefined ? false : true,
+            buttonLink: props.buttonLink,
+            buttonName: props.buttonName,
         }
     }
 
@@ -48,8 +50,14 @@ export default class CardDefault extends React.Component {
                         {this.state.imageSrc != null ? imgTitle : ""}
                     </div>
                     <div className="card-content">
-                    {this.state.imageSrc == null ? title : ""}
+                        {this.state.imageSrc == null ? title : ""}
                         {this.renderDescription()}
+                        <p style={{ marginTop: 16 }}>
+                            <a className="amber-text text-accent-4 modal-trigger"
+                            href={localStorage.getItem('userToken') ? this.state.buttonLink : '/login'}>
+                                {this.state.buttonName}
+                            </a>
+                        </p>
                     </div>
                     {this.state.pageLink != null ? cardActions : ""}
                 </div>

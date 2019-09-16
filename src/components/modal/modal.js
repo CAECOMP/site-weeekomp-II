@@ -112,21 +112,11 @@ export default class Modal extends Component {
             <div class="row" className="white-text">
               <div class="input-field col s12 white-text">
                 <select className="white-text" onChange={e => this.setState({ sizeSelected: e.target.value })}>
-                  <option class="white-text" value="PP">
-                    PP
-                  </option>
-                  <option class="white-text" value="P">
-                    P
-                  </option>
-                  <option class="white-text" value="M">
-                    M
-                  </option>
-                  <option class="white-text" value="G">
-                    G
-                  </option>
-                  <option class="white-text" value="GG">
-                    GG
-                  </option>
+                  <option class="white-text" value="PP"> PP </option>
+                  <option class="white-text" value="P"> P </option>
+                  <option class="white-text" value="M"> M </option>
+                  <option class="white-text" value="G"> G </option>
+                  <option class="white-text" value="GG"> GG </option>
                 </select>
                 <label class="white-text">Tamanho:</label>
               </div>
