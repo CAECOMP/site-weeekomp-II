@@ -5,75 +5,75 @@ const info = {
         {
             name: "COMBO - 2 Camisetas Weekomp",
             price: 50,
-            description: "Camisetas da Weekomp.",
+            description: "Combo de Duas Camisetas da Weekomp, com Desconto.",
             imgSrc: "https://weekomp-images.s3.us-east-2.amazonaws.com/products/shirts/combo.png"
         },{
             name: "COMBO - 2 Cadernos Weekomp",
             price: 18,
-            description: "Cadernos da Weekomp.",
+            description: "Combo de Dois Cadernos, com Desconto Especial",
             imgSrc: "https://weekomp-images.s3.us-east-2.amazonaws.com/products/notebooks/combo.png"
         },{
             name: "COMBO - 3 Bottons Weekomp",
             price: 7.50,
-            description: "Bottons da Weekomp.",
+            description: "Combo de Três Bottons da Weekomp, com Desconto.",
             imgSrc: "https://weekomp-images.s3.us-east-2.amazonaws.com/products/bottons/combo-3-models.png"
         },{
             name: "COMBO - 2 Bottons Weekomp",
             price: 5,
-            description: "Bottons da Weekomp.",
+            description: "Combo de Dois Bottons da Weekomp, com Desconto.",
             imgSrc: "https://weekomp-images.s3.us-east-2.amazonaws.com/products/bottons/combo-2-models.png"
         },{
             id: 13,
             name: "Caderno Weekomp - Preto",
             price: 10,
-            description: "Caderno da Weekomp.",
+            description: "Caderno da Weekomp de 60 páginas, de 14cm x 20cm com Folhas de Pauta Pontilhada.",
             imgSrc: "https://weekomp-images.s3.us-east-2.amazonaws.com/products/notebooks/black.png"
         },{
             id: 12,
             name: "Caderno Weekomp - Verde",
             price: 10,
-            description: "Caderno da Weekomp.",
+            description: "Caderno da Weekomp de 60 páginas, de 14cm x 20cm com Folhas de Pauta Pontilhada.",
             imgSrc: "https://weekomp-images.s3.us-east-2.amazonaws.com/products/notebooks/emerald.png"
         },{
             id: 10,
             name: "Caderno Weekomp - Roxo",
             price: 10,
-            description: "Caderno da Weekomp.",
+            description: "Caderno da Weekomp de 60 páginas, de 14cm x 20cm com Folhas de Pauta Pontilhada.",
             imgSrc: "https://weekomp-images.s3.us-east-2.amazonaws.com/products/notebooks/purple.png"
         },{
             id: 11,
             name: "Caderno Weekomp - Azul",
             price: 10,
-            description: "Caderno da Weekomp.",
+            description: "Caderno da Weekomp de 60 páginas, de 14cm x 20cm com Folhas de Pauta Pontilhada.",
             imgSrc: "https://weekomp-images.s3.us-east-2.amazonaws.com/products/notebooks/sapphire.png"
         },{
             id: 9,
             name: "Caderno Weekomp - Vermelho",
             price: 10,
-            description: "Caderno da Weekomp.",
+            description: "Caderno da Weekomp de 60 páginas, de 14cm x 20cm com Folhas de Pauta Pontilhada.",
             imgSrc: "https://weekomp-images.s3.us-east-2.amazonaws.com/products/notebooks/wine.png"
         },{
             name: "Camiseta Weekomp",
             price: 30,
-            description: "Camiseta da Weekomp.",
+            description: "Camiseta da Weekomp 100% algodão - Fio 30 - Penteado.",
             imgSrc: "https://weekomp-images.s3.us-east-2.amazonaws.com/products/shirts/shirt.png"
         },{
             id: 7,
             name: "Botton Weekomp - Modelo 01",
             price: 3,
-            description: "Botton da Weekomp.",
+            description: "Botton da Weekomp de 45mm de Diâmetro.",
             imgSrc: "https://weekomp-images.s3.us-east-2.amazonaws.com/products/bottons/botton-model-01.png"
         },{
             id: 6,
             name: "Botton Weekomp - Modelo 02",
             price: 3,
-            description: "Botton da Weekomp.",
+            description: "Botton da Weekomp de 45mm de Diâmetro.",
             imgSrc: "https://weekomp-images.s3.us-east-2.amazonaws.com/products/bottons/botton-model-02.png"
         },{
             id: 8,
             name: "Botton Weekomp - Modelo 03",
             price: 3,
-            description: "Botton da Weekomp.",
+            description: "Botton da Weekomp de 45mm de Diâmetro.",
             imgSrc: "https://weekomp-images.s3.us-east-2.amazonaws.com/products/bottons/botton-model-03.png"
         }
     ],
