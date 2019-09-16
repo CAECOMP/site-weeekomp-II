@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import ReactDOM from 'react-dom';
 import M from 'materialize-css';
 import info from '../../staticInfo/store'
 import { Combo } from '../../staticInfo/combo'
@@ -14,6 +13,7 @@ export default class Modal extends Component {
     this.buyButtonDidPressed = this.buyButtonDidPressed.bind(this);
     this.state = {
       quantity: 1,
+      sizeSelected: null,
       purchaseMade: null,
     };
   }
@@ -29,7 +29,7 @@ export default class Modal extends Component {
     };
     M.Modal.init(this.Modal, options);
 
-    M.AutoInit();
+    this.select = M.AutoInit();
   }
 
   getRequestRequirements() {
@@ -111,20 +111,20 @@ export default class Modal extends Component {
           {hasSize ? (
             <div class="row">
               <div class="input-field col s12 white-text">
-                <select>
-                  <option class="white-text" value="1">
+                <select onChange={e => this.setState({ sizeSelected: e.target.value })}>
+                  <option class="white-text" value="PP">
                     PP
                   </option>
-                  <option class="white-text" value="2">
+                  <option class="white-text" value="P">
                     P
                   </option>
-                  <option class="white-text" value="3">
+                  <option class="white-text" value="M">
                     M
                   </option>
-                  <option class="white-text" value="4">
+                  <option class="white-text" value="G">
                     G
                   </option>
-                  <option class="white-text" value="5">
+                  <option class="white-text" value="GG">
                     GG
                   </option>
                 </select>
