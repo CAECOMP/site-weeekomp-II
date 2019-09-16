@@ -82,7 +82,7 @@ export default class RegisterModal extends Component {
                 :
                 <p
                 class="center-align"
-                style={this.state.purchaseMade ? { color: 'green' } : { color: 'red' }}
+                style={this.state.subscribed ? { color: 'green' } : { color: 'red' }}
                 >{this.state.subscribed ?
                   'Pré inscrição realizada, confirme sua presença junto ao Centro Acadêmico' : 
                   'Erro na inscrição, tente novamente mais tarde'}
