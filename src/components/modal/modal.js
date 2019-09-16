@@ -5,6 +5,8 @@ import { Combo } from '../../staticInfo/combo'
 import api from '../../services/api'
 
 const CamisaID = { 'PP': 1, 'P': 2, 'M': 3, 'G': 4, 'GG': 5 }
+const CadernoID = { 'VERMELHO': 9, 'ROXO': 10, 'AZUL': 11, 'VERDE': 12, 'PRETO': 13 }
+const BottonID = { 'MODELO_1': 7, 'MODELO_2': 6, 'MODELO_3': 8 }
 
 export default class Modal extends Component {
 
@@ -13,9 +15,16 @@ export default class Modal extends Component {
     this.buyButtonDidPressed = this.buyButtonDidPressed.bind(this);
     this.state = {
       quantity: 1,
-      sizeSelected: null,
+      sizeSelected: 'PP',
       purchaseMade: null,
-    };
+      comboCamiseta1: 'PP',
+      comboCamiseta2: 'PP',
+      comboCaderno1: 'VERMELHO',
+      comboCaderno2: 'VERMELHO',
+      comboBotton1: 'MODELO_1',
+      comboBotton2: 'MODELO_2',
+      comboBotton3: 'MODELO_3',
+    }
   }
 
   componentDidMount() {
@@ -86,9 +95,10 @@ export default class Modal extends Component {
   }
 
   buyButtonDidPressed(e) {
-    e.target.disabled = true;
+    // e.target.disabled = true;
     const { modalId } = this.props;
-    modalId.includes('COMBO') ? this.buyCombo(modalId) : this.buyProduct(modalId);
+    console.log(modalId)
+    // modalId.includes('COMBO') ? this.buyCombo(modalId) : this.buyProduct(modalId);
   }
 
   render() {
@@ -108,7 +118,9 @@ export default class Modal extends Component {
           <div className="row">
             <h4 class="center-align">{title}</h4>
           </div>
-          {hasSize ? (
+
+          {/* CAMISETA SIZE SELECTOR */}
+          {hasSize && !this.props.modalId.includes('COMBO') ? (
             <div class="row">
               <label class="white-text">Tamanho:</label>
               <div class="input-field col s12">
@@ -122,6 +134,93 @@ export default class Modal extends Component {
               </div>
             </div>
           ) : null}
+
+          {/* COMBO 2 CAMISETAS SIZE SELECTOR */}
+          {this.props.modalId.includes('2 Camisetas') && (
+            <div>
+            <label class="white-text">Tamanhos</label>
+              <div class="row">
+                <div class="input-field col s6">
+                  <select class="browser-default" onChange={e => this.setState({ comboCamiseta1: e.target.value })}>
+                    <option class="" value="PP"> PP </option>
+                    <option class="" value="P"> P </option>
+                    <option class="" value="M"> M </option>
+                    <option class="" value="G"> G </option>
+                    <option class="" value="GG"> GG </option>
+                  </select>
+                </div>
+                <div class="input-field col s6">
+                  <select class="browser-default" onChange={e => this.setState({ comboCamiseta2: e.target.value })}>
+                    <option class="" value="PP"> PP </option>
+                    <option class="" value="P"> P </option>
+                    <option class="" value="M"> M </option>
+                    <option class="" value="G"> G </option>
+                    <option class="" value="GG"> GG </option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* COMBO 2 CADERNOS SIZE SELECTOR */}
+          {this.props.modalId.includes('2 Cadernos') && (
+            <div>
+              <label class="white-text">Cores</label>
+                <div class="row">
+                  <div class="input-field col s6">
+                    <select class="browser-default" onChange={e => this.setState({ comboCaderno1: e.target.value })}>
+                      <option class="" value="VERMELHO"> Vermelho </option>
+                      <option class="" value="AZUL"> Azul </option>
+                      <option class="" value="ROXO"> Roxo </option>
+                      <option class="" value="VERDE"> Verde </option>
+                      <option class="" value="PRETO"> Preto </option>
+                    </select>
+                  </div>
+                  <div class="input-field col s6">
+                    <select class="browser-default" onChange={e => this.setState({ comboCaderno2: e.target.value })}>
+                      <option class="" value="VERMELHO"> Vermelho </option>
+                      <option class="" value="AZUL"> Azul </option>
+                      <option class="" value="ROXO"> Roxo </option>
+                      <option class="" value="VERDE"> Verde </option>
+                      <option class="" value="PRETO"> Preto </option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* COMBO 2 CADERNOS SIZE SELECTOR */}
+          {this.props.modalId.includes('Bottons') && (
+            <div>
+              <label class="white-text">Modelos</label>
+                <div class="row">
+                  <div class={this.props.modalId.includes('3') ? 'input-field col s4' : 'input-field col s6' }>
+                    <select class="browser-default" onChange={e => this.setState({ comboBotton1: e.target.value })}>
+                      <option class="" value="MODELO_1"> Modelo 1 </option>
+                      <option class="" value="MODELO_2"> Modelo 2 </option>
+                      <option class="" value="MODELO_3"> Modelo 3 </option>
+                    </select>
+                  </div>
+                  <div class={this.props.modalId.includes('3') ? 'input-field col s4' : 'input-field col s6' }>
+                    <select class="browser-default" onChange={e => this.setState({ comboBotton2: e.target.value })}>
+                      <option class="" value="MODELO_1"> Modelo 1 </option>
+                      <option class="" value="MODELO_2"> Modelo 2 </option>
+                      <option class="" value="MODELO_3"> Modelo 3 </option>
+                    </select>
+                  </div>
+                  {this.props.modalId.includes('3') && (
+                    <div class="input-field col s4">
+                      <select class="browser-default" onChange={e => this.setState({ comboBotton2: e.target.value })}>
+                        <option class="" value="MODELO_1"> Modelo 1 </option>
+                        <option class="" value="MODELO_2"> Modelo 2 </option>
+                        <option class="" value="MODELO_3"> Modelo 3 </option>
+                      </select>
+                    </div>
+                  )}
+                </div>
+              </div>
+            )}
+
           <div class="row">
             <div class="col s12">
               Quantidade:
@@ -139,6 +238,7 @@ export default class Modal extends Component {
               </div>
             </div>
           </div>
+
           <div className="row">
             <h5 class="right-align">{`Preço total: R$ ${totalPrice.toFixed(2)}`}</h5>
           </div>
