@@ -210,7 +210,7 @@ export default class Modal extends Component {
                   </div>
                   {this.props.modalId.includes('3') && (
                     <div class="input-field col s4">
-                      <select class="browser-default" onChange={e => this.setState({ comboBotton2: e.target.value })}>
+                      <select class="browser-default" onChange={e => this.setState({ comboBotton3: e.target.value })}>
                         <option class="" value="MODELO_1"> Modelo 1 </option>
                         <option class="" value="MODELO_2"> Modelo 2 </option>
                         <option class="" value="MODELO_3"> Modelo 3 </option>
