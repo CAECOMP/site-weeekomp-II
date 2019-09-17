@@ -52,7 +52,9 @@ export default class Login extends React.Component {
               window.open('/perfil', '_self')
           })
           .catch((error)=>{
-              this.handleErrorMessage(error.response.data)
+              if (error.response.data) {
+                this.handleErrorMessage(error.response.data)
+              }
           })
     }
 

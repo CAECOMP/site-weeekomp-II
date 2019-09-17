@@ -6,6 +6,7 @@ import Footer from '../../components/commons/footer';
 import Divider from '../../components/divider';
 import CardSmall from '../../components/cards/cardSmall';
 import CardBig from '../../components/cards/cardBig';
+import RegisterModal from '../../components/modal/register-modal'
 
 export default class Wednesday extends React.Component {
 
@@ -32,7 +33,7 @@ export default class Wednesday extends React.Component {
                                     </div>
                                 }
                                 imageSrc={require('../../persons/italo-furtado.jpg')}
-                                buttonLink="#" buttonName="Inscrever-se"
+                                buttonLink="#Valhalla" buttonName="Inscrever-se"
                                 class="offset-m3"
                             />
                             <CardSmall
@@ -47,7 +48,7 @@ export default class Wednesday extends React.Component {
                                     </div>
                                 }
                                 imageSrc={require('../../persons/gustavo-chaves.jpeg')}
-                                buttonLink="#" buttonName="Inscrever-se"
+                                buttonLink="#UIeUX" buttonName="Inscrever-se"
                                 class="offset-m3"
                             />
                             <CardBig
@@ -71,11 +72,15 @@ export default class Wednesday extends React.Component {
                                     </div>
                                 }
                                 imageSrc={require('../../talks/walhalla-of-design.png')}
-                                buttonLink="#" buttonName="Inscrever-se"
+                                buttonLink="#ValhallaofDesign" buttonName="Inscrever-se"
                             />
                         </div>
                     </div>
                 </div>
+
+                <RegisterModal eventId="Valhalla" title="Primeiros passos para Valhalla" />
+                <RegisterModal eventId="UIeUX" title="UI e UX: Teoria e Prática com Adobe XD" />
+                <RegisterModal eventId="ValhallaofDesign" title="Valhalla of Design" />\
 
                 <Divider />
                 <Footer />

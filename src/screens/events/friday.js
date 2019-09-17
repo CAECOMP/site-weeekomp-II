@@ -6,6 +6,7 @@ import Footer from '../../components/commons/footer';
 import Divider from '../../components/divider';
 import CardSmall from '../../components/cards/cardSmall';
 import CardBig from '../../components/cards/cardBig';
+import RegisterModal from '../../components/modal/register-modal'
 
 export default class Friday extends React.Component {
 
@@ -32,7 +33,7 @@ export default class Friday extends React.Component {
                                     </div>
                                 }
                                 imageSrc={require('../../persons/julio-oliveira.jpg')}
-                                buttonLink="#" buttonName="Inscrever-se"
+                                buttonLink="#Intro" buttonName="Inscrever-se"
                             />
                             <CardSmall
                                 title="Maratona de Programação"
@@ -46,7 +47,7 @@ export default class Friday extends React.Component {
                                     </div>
                                 }
                                 imageSrc={require('../../persons/alyson-noronha.jpg')}
-                                buttonLink="#" buttonName="Inscrever-se"
+                                buttonLink="#Maratona" buttonName="Inscrever-se"
                             />
                             <CardBig
                                 title="RagnaKode"
@@ -68,11 +69,16 @@ export default class Friday extends React.Component {
                                     </div>
                                 }
                                 imageSrc={require('../../talks/ragnakode.png')}
-                                buttonLink="#" buttonName="Inscrever-se"
+                                buttonLink="#RagnaKode" buttonName="Inscrever-se"
                             />
                         </div>
                     </div>
                 </div>
+
+                <RegisterModal eventId="Intro" title="Programação Funcional com Python" />
+                <RegisterModal eventId="Maratona" title="Maratona de Programação" />
+                <RegisterModal eventId="RagnaKode" title="RagnaKode" />
+                
                 <Divider />
                 <Footer />
             </div>

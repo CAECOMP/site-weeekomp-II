@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const info = {
     products: [
@@ -78,31 +78,39 @@ const info = {
         }
     ],
 
-    informative: [
-        {
-            title: "Entrega",
-            description: "As entregas dos itens comprados ocorrerão durante a Weekomp."
-        },
-        {
-            title: "Pagamento",
-            description: [
-                <div>
-                    <p>Os pagamentos deverão ser feitos: em Espécie, pelo Pic-Pay ou por Transferência Bancária.</p>
-                    &emsp;
-                    <p>-> Pagamento em Espécie: Confira horários de atendimento do CAECOMP no Rodapé do Site.</p>
-                    &emsp;
-                    <p>-> PicPay: @jardelalves_bf</p>
-                    &emsp;
-                    <p>-> Nuconta:</p>
-                    <p>&emsp;&emsp;&emsp;&emsp;Nome:  Italo Bruno Cunha da Silva;</p>
-                    <p>&emsp;&emsp;&emsp;&emsp;CPF:   054.888.993-75;</p>
-                    <p>&emsp;&emsp;&emsp;&emsp;Banco: 260 - Nu Pagamentos S.A.;</p>
-                    <p>&emsp;&emsp;&emsp;&emsp;Agência: 0001;</p>
-                    <p>&emsp;&emsp;&emsp;&emsp;Conta: 8270524-0.</p>
-                </div>
-            ]
-        }
-    ]
-}
+  informative: [
+    {
+      title: 'Entrega',
+      description: 'As entregas dos itens comprados ocorrerão durante a Weekomp.',
+    },
+    {
+      title: 'Pagamento',
+      description: [
+        <div>
+          <p>
+            Os pagamentos deverão ser feitos: em Espécie, pelo Pic-Pay ou por Transferência
+            Bancária.
+          </p>
+          &emsp;
+          <p>
+            -> Pagamento em Espécie: Confira horários de atendimento do CAECOMP no Rodapé do Site.
+          </p>
+          &emsp;
+          <p>-> PicPay: @jardelalves_bf</p>
+          &emsp;
+          <p>-> Nuconta:</p>
+          <p>&emsp;&emsp;&emsp;&emsp;Nome: Italo Bruno Cunha da Silva;</p>
+          <p>&emsp;&emsp;&emsp;&emsp;CPF: 054.888.993-75;</p>
+          <p>&emsp;&emsp;&emsp;&emsp;Banco: 260 - Nu Pagamentos S.A.;</p>
+          <p>&emsp;&emsp;&emsp;&emsp;Agência: 0001;</p>
+          <p>&emsp;&emsp;&emsp;&emsp;Conta: 8270524-0.</p>
+          &emsp;
+          <p>OBS.: </p> 
+          <p>ENVIAR COMPROVANTE DE PAGAMENTO OU TRANSFERÊNCIA PARA O EMAIL: <span style={{color: 'green'}}> caecomp.ifce@gmail.com </span> </p>
+        </div>,
+      ],
+    },
+  ],
+};
 
-export default info
+export default info;

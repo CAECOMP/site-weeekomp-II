@@ -5,6 +5,7 @@ import Title from '../../components/title';
 import Footer from '../../components/commons/footer';
 import Divider from '../../components/divider';
 import CardSmall from '../../components/cards/cardSmall';
+import RegisterModal from '../../components/modal/register-modal'
 
 export default class Tuesday extends React.Component {
 
@@ -31,7 +32,7 @@ export default class Tuesday extends React.Component {
                                     </div>
                                 }
                                 imageSrc={require('../../persons/leonardo-gomes.jpg')}
-                                buttonLink="#" buttonName="Inscrever-se"
+                                buttonLink="#IoT" buttonName="Inscrever-se"
                             />
                             <CardSmall
                                 title="Jully Nobre - Quando e Porquê usar o Scrum?"
@@ -45,7 +46,7 @@ export default class Tuesday extends React.Component {
                                     </div>
                                 }
                                 imageSrc={require('../../persons/jully-nobre.jpg')}
-                                buttonLink="#" buttonName="Inscrever-se"
+                                buttonLink="#Scrum" buttonName="Inscrever-se"
                             />
                             <CardSmall
                                 title="Daniel e Ítalo - Ops! Como os devs podem ajudar?"
@@ -62,7 +63,7 @@ export default class Tuesday extends React.Component {
                                     </div>
                                 }
                                 imageSrc={require('../../persons/daniel-silva-&-italo-silva.jpg')}
-                                buttonLink="#" buttonName="Inscrever-se"
+                                buttonLink="#Ops!" buttonName="Inscrever-se"
                             />
                             <CardSmall
                                 title="Vinicius - Boas práticas de versionamento"
@@ -76,11 +77,16 @@ export default class Tuesday extends React.Component {
                                     </div>
                                 }
                                 imageSrc={require('../../persons/vinicius-mangueira.jpg')}
-                                buttonLink="#" buttonName="Inscrever-se"
+                                buttonLink="#versionamento" buttonName="Inscrever-se"
                             />
                         </div>
                     </div>
                 </div>
+
+                <RegisterModal eventId="IoT" title="Introdução a IoT com Arduino" />
+                <RegisterModal eventId="Scrum" title="Quando e Porquê usar o Scrum?" />
+                <RegisterModal eventId="Ops!" title="Ops! Como os devs podem ajudar?" />
+                <RegisterModal eventId="versionamento" title="Boas práticas de versionamento" />
 
                 <Divider />
                 <Footer />

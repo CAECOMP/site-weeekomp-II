@@ -5,6 +5,7 @@ import Title from '../../components/title';
 import Footer from '../../components/commons/footer';
 import Divider from '../../components/divider';
 import CardBig from '../../components/cards/cardBig';
+import RegisterModal from '../../components/modal/register-modal'
 
 export default class Monday extends React.Component {
 
@@ -31,7 +32,7 @@ export default class Monday extends React.Component {
                                     </div>
                                 }
                                 imageSrc={require('../../talks/the-last-of-ones.png')}
-                                buttonLink="#" buttonName="Inscrever-se"
+                                buttonLink="#TheLastOnes" buttonName="Inscrever-se"
                             />
                             <CardBig
                                 title="Odin's Table - David, Alan Rabelo, Leo Silveira, Levi Moreira"
@@ -45,11 +46,14 @@ export default class Monday extends React.Component {
                                     </div>
                                 }
                                 imageSrc={require('../../talks/odins-table.png')}
-                                buttonLink="#" buttonName="Inscrever-se"
+                                buttonLink="#OdinsTable" buttonName="Inscrever-se"
                             />
                         </div>
                     </div>
                 </div>
+
+                <RegisterModal eventId="TheLastOnes" title="The Last Ones" />
+                <RegisterModal eventId="OdinsTable" title="Odin's Table" />
 
                 <Divider />
                 <Footer />

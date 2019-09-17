@@ -2,14 +2,13 @@ import React,{Component} from 'react'
 import Navbar from '../../components/commons/navbar'
 import Footer from '../../components/commons/footer'
 import CardDefault from '../../components/cards/cardRules'
-// import { type } from 'os';
 
 class Rules extends Component{
    constructor(props){
        super(props)
        this.state ={
            InfoStore : ['A loja estará disponível para todos que fizerem a primeira parte da inscrição.',
-           'PEDIDOS ATÉ DIA 28 DE SETEMBRO.','Após passado o prazo os pedidos estarão encerrados!',
+           'PEDIDOS ATÉ DIA 27 DE SETEMBRO.','Após passado o prazo os pedidos estarão encerrados!',
            'Entrega de produtos serão feitas durante a Weekomp']
            ,infoSubs:['São duas etapas para se inscrever na WEEKOMP II:',
            '1 - Inscrição Pelo Site:',
@@ -30,12 +29,12 @@ class Rules extends Component{
         return(
             <div>
                 <Navbar/>
-                <CardDefault title='Sobre a loja:'  description={this.state.InfoStore} /> 
-                <CardDefault title='Sobre as Inscrições'  description={this.state.infoSubs} /> 
-                <CardDefault title='Sobre os Certificados'  description={this.state.infoDip} />
+                <CardDefault title='Informações  Loja:'  description={this.state.InfoStore} /> 
+                <CardDefault title='Informações  Inscrições'  description={this.state.infoSubs} /> 
+                <CardDefault title='Informações Certificados'  description={this.state.infoDip} />
                 <CardDefault title='Parceria '  description={this.state.infopart} />
                 <CardDefault title='Impacto Sertão Kids '  description={this.state.infoKids} />
-                {/* <CardDefault title='Pagamentos'  description={this.state.infopay} /> */}
+                {/* <CardDefault title='Informações Pagamentos '  description={this.state.infopay} /> */}
                 <Footer/>
             </div>
             

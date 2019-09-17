@@ -1,4 +1,6 @@
 import React from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {faInfo,faInfoCircle} from '@fortawesome/free-solid-svg-icons'
 
 export default class CardDefault extends React.Component {
     constructor(props) {
@@ -17,9 +19,10 @@ export default class CardDefault extends React.Component {
 
     renderDescription() {
         if (typeof(this.state.description) == "object") {
-            let list = this.state.description
-            return list.map((info) => {return(
-               <ul><li>{info}</li></ul>
+            return this.state.description.map((info) => {return(
+               <div className="collapse"> 
+                   <ul><li>{info}</li></ul>
+               </div>
             )
             })
             
@@ -32,12 +35,14 @@ export default class CardDefault extends React.Component {
 
         const title = 
                 <span className={`card-title ${this.state.centerTitle ? "center-align" : ""}`}>
-                        {this.state.title}
+                         <i> <FontAwesomeIcon icon={faInfoCircle} color='white' className='fa-sm'  /> </i>
+                            {this.state.title}
                 </span>
 
         const imgTitle = 
                 <div>
                     <img src={this.state.imageSrc}/>
+                    
                     {title}
                 </div>
 

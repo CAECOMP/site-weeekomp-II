@@ -5,6 +5,7 @@ import Title from '../../components/title';
 import Footer from '../../components/commons/footer';
 import Divider from '../../components/divider';
 import CardSmall from '../../components/cards/cardSmall';
+import RegisterModal from '../../components/modal/register-modal'
 
 export default class Thursday extends React.Component {
 
@@ -31,7 +32,7 @@ export default class Thursday extends React.Component {
                                     </div>
                                 }
                                 imageSrc={require('../../persons/marcus-vinicius.jpg')}
-                                buttonLink="#" buttonName="Inscrever-se"
+                                buttonLink="#CrackMe" buttonName="Inscrever-se"
                             />
                             <CardSmall
                                 title="Marcus Vinícius - Capture The Flag (CTF)"
@@ -45,11 +46,14 @@ export default class Thursday extends React.Component {
                                     </div>
                                 }
                                 imageSrc={require('../../talks/capture-flag.png')}
-                                buttonLink="#" buttonName="Inscrever-se"
+                                buttonLink="#CTF" buttonName="Inscrever-se"
                             />
                         </div>
                     </div>
                 </div>
+
+                <RegisterModal eventId="CrackMe" title="Workshop 'Crack Me'" />
+                <RegisterModal eventId="CTF" title="CTF - Capture The Flag" />
 
                 <Divider />
                 <Footer />
