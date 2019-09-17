@@ -8,7 +8,7 @@ RUN npm install
 RUN npm install -g serve
 
 COPY . /usr/src/app
-ARG REACT_APP_BACK_URI
-ENV REACT_APP_BACK_URI $REACT_APP_BACK_URI
+ARG REACT_APP_BACK_URL
+ENV REACT_APP_BACK_URL $REACT_APP_BACK_URL
 
 RUN npm run build
