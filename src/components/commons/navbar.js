@@ -33,6 +33,7 @@ export default class Navbar extends React.Component {
                     </nav>
                 </div>
                 <ul className="sidenav" id="mobile-demo">
+                    <li><a href="../">Inicio</a></li>
                     <li><a href="/loja/">Loja</a></li>
                     <li><a href="/regras/">Info</a></li>
                     <li><a href="/perfil/">Perfil</a></li>
