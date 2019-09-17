@@ -56,7 +56,8 @@ const info = {
             name: "Camiseta Weekomp",
             price: 30,
             description: "Camiseta da Weekomp 100% algodão - Fio 30 - Penteado.",
-            imgSrc: "https://weekomp-images.s3.us-east-2.amazonaws.com/products/shirts/shirt.png"
+            imgSrc: "https://weekomp-images.s3.us-east-2.amazonaws.com/products/shirts/shirt.png",
+            hasSize: true
         },{
             id: 7,
             name: "Botton Weekomp - Modelo 01",

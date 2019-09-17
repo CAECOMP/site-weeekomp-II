@@ -124,7 +124,7 @@ export default class Modal extends Component {
           </div>
 
           {/* CAMISETA SIZE SELECTOR */}
-          {hasSize && !modalId.includes('COMBO') ? (
+          {(hasSize && !modalId.includes('COMBO')) ? (
             <div class="row">
               <label class="white-text">Tamanho:</label>
               <div class="input-field col s12">
