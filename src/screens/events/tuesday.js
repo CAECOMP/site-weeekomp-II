@@ -22,25 +22,60 @@ export default class Tuesday extends React.Component {
                         <div className="row">
                             <CardSmall
                                 title="Leonardo Gomes - Introdução a IoT com Arduino"
-                                content="O workshop irá introduzir alguns conceitos de IoT utilizando Arduino, mostrando na prática como fazer algumas aplicações simples com WiFi."
+                                content={
+                                    <div>
+                                        &emsp;
+                                        <h6 className="amber-text text-accent-4">LOCAL: LMC 01.</h6>
+                                        <h6 className="amber-text text-accent-4">HORÁRIO: 8h - 12h.</h6>
+                                        &emsp;
+                                        <p>O workshop irá introduzir alguns conceitos de IoT utilizando Arduino, mostrando na prática como fazer algumas aplicações simples com WiFi.</p>
+                                    </div>
+                                }
                                 imageSrc={require('../../persons/leonardo-gomes.jpg')}
                                 buttonLink="#IoT" buttonName="Inscrever-se"
                             />
                             <CardSmall
                                 title="Jully Nobre - Quando e Porquê usar o Scrum?"
-                                content="Nessa palestra será demonstrado casos em que o Scrum pode ajudar (ou não) na gerencia de projetos."
+                                content={
+                                    <div>
+                                        &emsp;
+                                        <h6 className="amber-text text-accent-4">LOCAL: Auditório Iran Raupp.</h6>
+                                        <h6 className="amber-text text-accent-4">HORÁRIO: 14h.</h6>
+                                        &emsp;
+                                        <p>Nessa palestra será demonstrado casos em que o Scrum pode ajudar (ou não) na gerencia de projetos.</p>
+                                    </div>
+                                }
                                 imageSrc={require('../../persons/jully-nobre.jpg')}
                                 buttonLink="#Scrum" buttonName="Inscrever-se"
                             />
                             <CardSmall
                                 title="Daniel e Ítalo - Ops! Como os devs podem ajudar?"
-                                content="Cultura devops -> Por que CI&CD -> intro com testes unitarios."
+                                content={
+                                    <div>
+                                        &emsp;
+                                        <h6 className="amber-text text-accent-4">LOCAL: Auditório Iran Raupp.</h6>
+                                        <h6 className="amber-text text-accent-4">HORÁRIO: 14h50.</h6>
+                                        &emsp;
+                                        <p>-> "Devepos + Tests";</p>
+                                        <p>-> Cultura Devops;</p>
+                                        <p>-> Por que CI e CD?;</p>
+                                        <p>-> Intro com Testes Unitários.</p>
+                                    </div>
+                                }
                                 imageSrc={require('../../persons/daniel-silva-&-italo-silva.jpg')}
                                 buttonLink="#Ops!" buttonName="Inscrever-se"
                             />
                             <CardSmall
                                 title="Vinicius - Boas práticas de versionamento"
-                                content="O versionamento de código é algo essencial para todo programador e é preciso estar atento as boas práticas para melhorar a sua produtividade a do seu time. Nesta palestra iremos demonstrar maneiras de garantir uma melhor gestão dos seus repositórios."
+                                content={
+                                    <div>
+                                        &emsp;
+                                        <h6 className="amber-text text-accent-4">LOCAL: Auditório Iran Raupp.</h6>
+                                        <h6 className="amber-text text-accent-4">HORÁRIO: 16h.</h6>
+                                        &emsp;
+                                        <p>O versionamento de código é algo essencial para todo programador e é preciso estar atento as boas práticas para melhorar a sua produtividade a do seu time. Nesta palestra iremos demonstrar maneiras de garantir uma melhor gestão dos seus repositórios.</p>
+                                    </div>
+                                }
                                 imageSrc={require('../../persons/vinicius-mangueira.jpg')}
                                 buttonLink="#versionamento" buttonName="Inscrever-se"
                             />

@@ -21,14 +21,30 @@ export default class Thursday extends React.Component {
                     <div className="section">
                         <div className="row">
                             <CardSmall
-                                title="Workshop 'Crack Me'"
-                                content="O workshop será ministrado de forma que os participantes conheçam os conceitos básicos necessários para solucionar desafios do tipo “crack me”. Não será necessário de conhecimentos prévios de resolução de tais desafios mas é aconselhável ter uma boa base de programação utilizando a linguagem C para melhor entendimento dos problemas a serem resolvidos."
+                                title="Marcus Vinícius - Workshop 'Crack Me'"
+                                content={
+                                    <div>
+                                        &emsp;
+                                        <h6 className="amber-text text-accent-4">LOCAL: LMC 01.</h6>
+                                        <h6 className="amber-text text-accent-4">HORÁRIO: 8h - 12h.</h6>
+                                        &emsp;
+                                        <p>O workshop será ministrado de forma que os participantes conheçam os conceitos básicos necessários para solucionar desafios do tipo “crack me”. Não será necessário de conhecimentos prévios de resolução de tais desafios mas é aconselhável ter uma boa base de programação utilizando a linguagem C para melhor entendimento dos problemas a serem resolvidos.</p>
+                                    </div>
+                                }
                                 imageSrc={require('../../persons/marcus-vinicius.jpg')}
                                 buttonLink="#CrackMe" buttonName="Inscrever-se"
                             />
                             <CardSmall
-                                title="CTF - Capture The Flag"
-                                content="O CTF da Weekomp desse ano abordará desafios do tipo “crack me” e tem como objetivo apresentar os problemas clássicos relacionados a essa categoria de problemas."
+                                title="Marcus Vinícius - Capture The Flag (CTF)"
+                                content={
+                                    <div>
+                                        &emsp;
+                                        <h6 className="amber-text text-accent-4">LOCAL: LMC 03.</h6>
+                                        <h6 className="amber-text text-accent-4">HORÁRIO: 14h - 18h.</h6>
+                                        &emsp;
+                                        <p>O CTF da Weekomp desse ano abordará desafios do tipo “crack me” e tem como objetivo apresentar os problemas clássicos relacionados a essa categoria de problemas.</p>
+                                    </div>
+                                }
                                 imageSrc={require('../../talks/capture-flag.png')}
                                 buttonLink="#CTF" buttonName="Inscrever-se"
                             />
