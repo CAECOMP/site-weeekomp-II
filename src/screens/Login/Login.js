@@ -73,6 +73,7 @@ export default class Login extends React.Component {
                     <Input className="formInput" name="password" type="password" placeholder="Senha"/>
                     
                     <button className="submitBtn" type="submit">Entrar</button>
+                    <a href="/cadastro" style={{ marginTop: 12, color: 'white' }} > Cadastre-se </a>
                 </Form>
             </div>
         )
