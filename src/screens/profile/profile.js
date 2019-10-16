@@ -6,7 +6,6 @@ import Navbar from '../../components/commons/navbar';
 import CardHorizontal from '../../components/cards/cardHorizontal';
 import api from '../../services/api'
 import info from '../../staticInfo/store'
-// import { longStackSupport } from 'q';
 
 export default class Profile extends React.Component {
 
@@ -20,7 +19,6 @@ export default class Profile extends React.Component {
     constructor(props) {
         super(props)
         this.logout = this.logout.bind(this)
-        // this.getUserInfo = this.getUserInfo.bind(this)
     }
 
     componentDidMount() {
